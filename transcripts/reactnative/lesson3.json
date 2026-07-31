@@ -1,0 +1,2232 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "F:\\LLM\\models\\ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,120"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3120
+			},
+			"text": " All right, welcome everyone to this explainer."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:03,120",
+				"to": "00:00:05,680"
+			},
+			"offsets": {
+				"from": 3120,
+				"to": 5680
+			},
+			"text": " You know, if you're at all interested in mobile app development,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:05,680",
+				"to": "00:00:07,360"
+			},
+			"offsets": {
+				"from": 5680,
+				"to": 7360
+			},
+			"text": " you've probably felt the ground shifting"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:07,360",
+				"to": "00:00:08,920"
+			},
+			"offsets": {
+				"from": 7360,
+				"to": 8920
+			},
+			"text": " beneath your feet recently."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:08,920",
+				"to": "00:00:11,560"
+			},
+			"offsets": {
+				"from": 8920,
+				"to": 11560
+			},
+			"text": " Today, we're doing a deep dive into how React Native"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:11,560",
+				"to": "00:00:15,680"
+			},
+			"offsets": {
+				"from": 11560,
+				"to": 15680
+			},
+			"text": " is absolutely revolutionizing the way we build mobile apps."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:15,680",
+				"to": "00:00:18,640"
+			},
+			"offsets": {
+				"from": 15680,
+				"to": 18640
+			},
+			"text": " Now, this framework has obviously been a major player for years,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:18,640",
+				"to": "00:00:21,160"
+			},
+			"offsets": {
+				"from": 18640,
+				"to": 21160
+			},
+			"text": " but it recently underwent a massive structural overhaul"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:21,160",
+				"to": "00:00:22,440"
+			},
+			"offsets": {
+				"from": 21160,
+				"to": 22440
+			},
+			"text": " right under the foot."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:22,440",
+				"to": "00:00:25,000"
+			},
+			"offsets": {
+				"from": 22440,
+				"to": 25000
+			},
+			"text": " We're talking about a leap that finally, finally,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:25,000",
+				"to": "00:00:27,880"
+			},
+			"offsets": {
+				"from": 25000,
+				"to": 27880
+			},
+			"text": " bridges the gap to true native level performance."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:27,880",
+				"to": "00:00:30,280"
+			},
+			"offsets": {
+				"from": 27880,
+				"to": 30280
+			},
+			"text": " But hey, before we get into that nuts and bolts,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:30,280",
+				"to": "00:00:33,280"
+			},
+			"offsets": {
+				"from": 30280,
+				"to": 33280
+			},
+			"text": " let's just address the elephant in the room right off the bat."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:33,280",
+				"to": "00:00:36,240"
+			},
+			"offsets": {
+				"from": 33280,
+				"to": 36240
+			},
+			"text": " Are cross-platform apps just doomed to be slower?"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:36,240",
+				"to": "00:00:38,480"
+			},
+			"offsets": {
+				"from": 36240,
+				"to": 38480
+			},
+			"text": " I mean, for years, this has been the pressing question"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:38,480",
+				"to": "00:00:40,760"
+			},
+			"offsets": {
+				"from": 38480,
+				"to": 40760
+			},
+			"text": " endlessly debated on developer forums"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:40,760",
+				"to": "00:00:43,280"
+			},
+			"offsets": {
+				"from": 40760,
+				"to": 43280
+			},
+			"text": " and, you know, in engineering stand-ups everywhere."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:43,280",
+				"to": "00:00:44,880"
+			},
+			"offsets": {
+				"from": 43280,
+				"to": 44880
+			},
+			"text": " There was always this underlying assumption"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:44,880",
+				"to": "00:00:47,080"
+			},
+			"offsets": {
+				"from": 44880,
+				"to": 47080
+			},
+			"text": " that if you aren't writing pure native code,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:47,080",
+				"to": "00:00:50,080"
+			},
+			"offsets": {
+				"from": 47080,
+				"to": 50080
+			},
+			"text": " you simply have to sacrifice speed and responsiveness."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:50,080",
+				"to": "00:00:52,160"
+			},
+			"offsets": {
+				"from": 50080,
+				"to": 52160
+			},
+			"text": " Well, the stakes are incredibly high today"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:52,160",
+				"to": "00:00:54,000"
+			},
+			"offsets": {
+				"from": 52160,
+				"to": 54000
+			},
+			"text": " because we're about to explore a performance leap"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:54,000",
+				"to": "00:00:56,440"
+			},
+			"offsets": {
+				"from": 54000,
+				"to": 56440
+			},
+			"text": " that completely flips that script."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:56,440",
+				"to": "00:00:59,600"
+			},
+			"offsets": {
+				"from": 56440,
+				"to": 59600
+			},
+			"text": " Section one, the cross-platform dilemma."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:59,600",
+				"to": "00:01:02,560"
+			},
+			"offsets": {
+				"from": 59600,
+				"to": 62560
+			},
+			"text": " Man, historically, building a mobile application was,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:02,560",
+				"to": "00:01:04,560"
+			},
+			"offsets": {
+				"from": 62560,
+				"to": 64560
+			},
+			"text": " well, it was kind of a nightmare."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:04,560",
+				"to": "00:01:06,720"
+			},
+			"offsets": {
+				"from": 64560,
+				"to": 66720
+			},
+			"text": " You had to maintain entirely separate codebases"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:06,720",
+				"to": "00:01:08,400"
+			},
+			"offsets": {
+				"from": 66720,
+				"to": 68400
+			},
+			"text": " just to reach your full audience."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:08,400",
+				"to": "00:01:11,000"
+			},
+			"offsets": {
+				"from": 68400,
+				"to": 71000
+			},
+			"text": " Your iOS team wrote code in Swift or Objective-C,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:11,000",
+				"to": "00:01:13,240"
+			},
+			"offsets": {
+				"from": 71000,
+				"to": 73240
+			},
+			"text": " and your Android team wrote in Java or Kotlin."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:13,240",
+				"to": "00:01:15,360"
+			},
+			"offsets": {
+				"from": 73240,
+				"to": 75360
+			},
+			"text": " And this meant double the work."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:15,360",
+				"to": "00:01:16,640"
+			},
+			"offsets": {
+				"from": 75360,
+				"to": 76640
+			},
+			"text": " Actually, scratch that."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:16,640",
+				"to": "00:01:17,920"
+			},
+			"offsets": {
+				"from": 76640,
+				"to": 77920
+			},
+			"text": " It felt like more than double the work"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:17,920",
+				"to": "00:01:19,240"
+			},
+			"offsets": {
+				"from": 77920,
+				"to": 79240
+			},
+			"text": " because you had the absolute joy"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:19,240",
+				"to": "00:01:21,000"
+			},
+			"offsets": {
+				"from": 79240,
+				"to": 81000
+			},
+			"text": " of fixing the exact same bug twice"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:21,000",
+				"to": "00:01:23,000"
+			},
+			"offsets": {
+				"from": 81000,
+				"to": 83000
+			},
+			"text": " in two completely different languages."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:23,000",
+				"to": "00:01:24,800"
+			},
+			"offsets": {
+				"from": 83000,
+				"to": 84800
+			},
+			"text": " It was a huge barrier to entry."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:24,800",
+				"to": "00:01:26,680"
+			},
+			"offsets": {
+				"from": 84800,
+				"to": 86680
+			},
+			"text": " Then, React Native entered the scene,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:26,680",
+				"to": "00:01:29,480"
+			},
+			"offsets": {
+				"from": 86680,
+				"to": 89480
+			},
+			"text": " championing this learn-once, write-anywhere philosophy."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:29,480",
+				"to": "00:01:31,520"
+			},
+			"offsets": {
+				"from": 89480,
+				"to": 91520
+			},
+			"text": " And the industry definitely listened."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:31,520",
+				"to": "00:01:33,240"
+			},
+			"offsets": {
+				"from": 91520,
+				"to": 93240
+			},
+			"text": " Look at the giants relying on it today."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:33,240",
+				"to": "00:01:38,240"
+			},
+			"offsets": {
+				"from": 93240,
+				"to": 98240
+			},
+			"text": " Meta, Discord, Microsoft, Tesla, Amazon, Airbnb, huge names."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:38,640",
+				"to": "00:01:40,600"
+			},
+			"offsets": {
+				"from": 98640,
+				"to": 100600
+			},
+			"text": " React Native promised the Holy Grail,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:40,600",
+				"to": "00:01:43,680"
+			},
+			"offsets": {
+				"from": 100600,
+				"to": 103680
+			},
+			"text": " a single JavaScript codebase for both major platforms."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:43,680",
+				"to": "00:01:46,480"
+			},
+			"offsets": {
+				"from": 103680,
+				"to": 106480
+			},
+			"text": " But early critics were quick to point out a flaw."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:46,480",
+				"to": "00:01:47,880"
+			},
+			"offsets": {
+				"from": 106480,
+				"to": 107880
+			},
+			"text": " Despite the massive adoption,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:47,880",
+				"to": "00:01:51,200"
+			},
+			"offsets": {
+				"from": 107880,
+				"to": 111200
+			},
+			"text": " they argued React Native just lacked true native speed,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:51,200",
+				"to": "00:01:53,200"
+			},
+			"offsets": {
+				"from": 111200,
+				"to": 113200
+			},
+			"text": " especially when it came to heavy data processing"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:53,200",
+				"to": "00:01:54,760"
+			},
+			"offsets": {
+				"from": 113200,
+				"to": 114760
+			},
+			"text": " or trying to hit those buttery smooth"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:54,760",
+				"to": "00:01:56,720"
+			},
+			"offsets": {
+				"from": 114760,
+				"to": 116720
+			},
+			"text": " 60 frames per second animations,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:56,720",
+				"to": "00:02:00,680"
+			},
+			"offsets": {
+				"from": 116720,
+				"to": 120680
+			},
+			"text": " which brings us to section two, the old bridge bottleneck."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:00,680",
+				"to": "00:02:03,000"
+			},
+			"offsets": {
+				"from": 120680,
+				"to": 123000
+			},
+			"text": " Okay, let's dive into this."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:03,000",
+				"to": "00:02:06,400"
+			},
+			"offsets": {
+				"from": 123000,
+				"to": 126400
+			},
+			"text": " To understand why those early critics actually had a point,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:06,400",
+				"to": "00:02:09,120"
+			},
+			"offsets": {
+				"from": 126400,
+				"to": 129120
+			},
+			"text": " we need to look at the historical fundamental flaw"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:09,120",
+				"to": "00:02:11,280"
+			},
+			"offsets": {
+				"from": 129120,
+				"to": 131280
+			},
+			"text": " of the framework, because honestly,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:11,280",
+				"to": "00:02:14,160"
+			},
+			"offsets": {
+				"from": 131280,
+				"to": 134160
+			},
+			"text": " it became a major source of frustration for developers"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:14,160",
+				"to": "00:02:17,720"
+			},
+			"offsets": {
+				"from": 134160,
+				"to": 137720
+			},
+			"text": " trying to push the absolute limits of UI responsiveness."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:17,720",
+				"to": "00:02:20,440"
+			},
+			"offsets": {
+				"from": 137720,
+				"to": 140440
+			},
+			"text": " In the old architecture, you had two distinct,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:20,440",
+				"to": "00:02:22,680"
+			},
+			"offsets": {
+				"from": 140440,
+				"to": 142680
+			},
+			"text": " completely isolated worlds."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:22,680",
+				"to": "00:02:24,920"
+			},
+			"offsets": {
+				"from": 142680,
+				"to": 144920
+			},
+			"text": " The JavaScript thread and the native thread."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:24,920",
+				"to": "00:02:26,360"
+			},
+			"offsets": {
+				"from": 144920,
+				"to": 146360
+			},
+			"text": " When they needed to communicate,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:26,360",
+				"to": "00:02:28,560"
+			},
+			"offsets": {
+				"from": 146360,
+				"to": 148560
+			},
+			"text": " say you tap a button in your JavaScript interface"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:28,560",
+				"to": "00:02:30,200"
+			},
+			"offsets": {
+				"from": 148560,
+				"to": 150200
+			},
+			"text": " to trigger a native animation,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:30,200",
+				"to": "00:02:32,760"
+			},
+			"offsets": {
+				"from": 150200,
+				"to": 152760
+			},
+			"text": " they had to talk over what was known as the bridge."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:32,760",
+				"to": "00:02:34,200"
+			},
+			"offsets": {
+				"from": 152760,
+				"to": 154200
+			},
+			"text": " But this bridge was finicky."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:34,200",
+				"to": "00:02:35,760"
+			},
+			"offsets": {
+				"from": 154200,
+				"to": 155760
+			},
+			"text": " It forced a specific format,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:35,760",
+				"to": "00:02:38,840"
+			},
+			"offsets": {
+				"from": 155760,
+				"to": 158840
+			},
+			"text": " meaning it only accepted serialized JSON messages."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:38,840",
+				"to": "00:02:41,120"
+			},
+			"offsets": {
+				"from": 158840,
+				"to": 161120
+			},
+			"text": " So every complex action had to be flattened"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:41,120",
+				"to": "00:02:43,400"
+			},
+			"offsets": {
+				"from": 161120,
+				"to": 163400
+			},
+			"text": " into a giant text string on one side,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:43,400",
+				"to": "00:02:44,520"
+			},
+			"offsets": {
+				"from": 163400,
+				"to": 164520
+			},
+			"text": " sent over the bridge,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:44,520",
+				"to": "00:02:47,200"
+			},
+			"offsets": {
+				"from": 164520,
+				"to": 167200
+			},
+			"text": " and unpacked back into an object on the other side."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:47,200",
+				"to": "00:02:49,920"
+			},
+			"offsets": {
+				"from": 167200,
+				"to": 169920
+			},
+			"text": " As you can imagine, this asynchronous transmission"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:49,920",
+				"to": "00:02:51,280"
+			},
+			"offsets": {
+				"from": 169920,
+				"to": 171280
+			},
+			"text": " caused noticeable lag"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:51,280",
+				"to": "00:02:53,280"
+			},
+			"offsets": {
+				"from": 171280,
+				"to": 173280
+			},
+			"text": " and became a massive performance bottleneck"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:53,280",
+				"to": "00:02:55,200"
+			},
+			"offsets": {
+				"from": 173280,
+				"to": 175200
+			},
+			"text": " for anything involving heavy data."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:55,200",
+				"to": "00:02:56,160"
+			},
+			"offsets": {
+				"from": 175200,
+				"to": 176160
+			},
+			"text": " Think of it like this."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:56,160",
+				"to": "00:02:58,760"
+			},
+			"offsets": {
+				"from": 176160,
+				"to": 178760
+			},
+			"text": " It's essentially a slow translator."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:58,760",
+				"to": "00:03:01,120"
+			},
+			"offsets": {
+				"from": 178760,
+				"to": 181120
+			},
+			"text": " Imagine two people who literally don't speak a word"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:01,120",
+				"to": "00:03:04,040"
+			},
+			"offsets": {
+				"from": 181120,
+				"to": 184040
+			},
+			"text": " of the same language trying to have a rapid fire conversation."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:04,040",
+				"to": "00:03:06,040"
+			},
+			"offsets": {
+				"from": 184040,
+				"to": 186040
+			},
+			"text": " They have to use a slow, written translator"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:06,040",
+				"to": "00:03:07,760"
+			},
+			"offsets": {
+				"from": 186040,
+				"to": 187760
+			},
+			"text": " to pass nodes back and forth."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:07,760",
+				"to": "00:03:09,240"
+			},
+			"offsets": {
+				"from": 187760,
+				"to": 189240
+			},
+			"text": " It works, sure."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:09,240",
+				"to": "00:03:11,800"
+			},
+			"offsets": {
+				"from": 189240,
+				"to": 191800
+			},
+			"text": " But if you're trying to coordinate something incredibly fast"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:11,800",
+				"to": "00:03:15,040"
+			},
+			"offsets": {
+				"from": 191800,
+				"to": 195040
+			},
+			"text": " and complex, like a user swiping rapidly through a list,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:15,040",
+				"to": "00:03:17,720"
+			},
+			"offsets": {
+				"from": 195040,
+				"to": 197720
+			},
+			"text": " that note passing delay creates stuttering."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:17,720",
+				"to": "00:03:20,120"
+			},
+			"offsets": {
+				"from": 197720,
+				"to": 200120
+			},
+			"text": " The user taps the screen, the note is passed,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:20,120",
+				"to": "00:03:21,480"
+			},
+			"offsets": {
+				"from": 200120,
+				"to": 201480
+			},
+			"text": " the native side reacts,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:21,480",
+				"to": "00:03:24,720"
+			},
+			"offsets": {
+				"from": 201480,
+				"to": 204720
+			},
+			"text": " but by then the moment has passed and you get a dropped frame."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:24,720",
+				"to": "00:03:28,560"
+			},
+			"offsets": {
+				"from": 204720,
+				"to": 208560
+			},
+			"text": " All right, section three, the new architecture paradigm."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:28,560",
+				"to": "00:03:29,400"
+			},
+			"offsets": {
+				"from": 208560,
+				"to": 209400
+			},
+			"text": " But guess what?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:29,400",
+				"to": "00:03:32,880"
+			},
+			"offsets": {
+				"from": 209400,
+				"to": 212880
+			},
+			"text": " That era of slow translation is officially over."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:32,880",
+				"to": "00:03:34,440"
+			},
+			"offsets": {
+				"from": 212880,
+				"to": 214440
+			},
+			"text": " And I cannot stress this enough."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:34,440",
+				"to": "00:03:36,480"
+			},
+			"offsets": {
+				"from": 214440,
+				"to": 216480
+			},
+			"text": " This isn't just an incremental update."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:36,480",
+				"to": "00:03:39,000"
+			},
+			"offsets": {
+				"from": 216480,
+				"to": 219000
+			},
+			"text": " This is a massive, fundamental overhaul"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:39,000",
+				"to": "00:03:41,520"
+			},
+			"offsets": {
+				"from": 219000,
+				"to": 221520
+			},
+			"text": " of how React Native operates from the ground up,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:41,520",
+				"to": "00:03:43,640"
+			},
+			"offsets": {
+				"from": 221520,
+				"to": 223640
+			},
+			"text": " and it changes absolutely everything"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:43,640",
+				"to": "00:03:45,520"
+			},
+			"offsets": {
+				"from": 223640,
+				"to": 225520
+			},
+			"text": " about cross-platform performance."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:45,520",
+				"to": "00:03:46,920"
+			},
+			"offsets": {
+				"from": 225520,
+				"to": 226920
+			},
+			"text": " Now, what's really interesting"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:46,920",
+				"to": "00:03:48,360"
+			},
+			"offsets": {
+				"from": 226920,
+				"to": 228360
+			},
+			"text": " about the contrast we're looking at here"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:48,360",
+				"to": "00:03:50,080"
+			},
+			"offsets": {
+				"from": 228360,
+				"to": 230080
+			},
+			"text": " is how stark it is."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:50,080",
+				"to": "00:03:52,080"
+			},
+			"offsets": {
+				"from": 230080,
+				"to": 232080
+			},
+			"text": " With the old system, you were heavily relying"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:52,080",
+				"to": "00:03:54,640"
+			},
+			"offsets": {
+				"from": 232080,
+				"to": 234640
+			},
+			"text": " on that asynchronous bridge and JSON serialization."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:54,640",
+				"to": "00:03:56,120"
+			},
+			"offsets": {
+				"from": 234640,
+				"to": 236120
+			},
+			"text": " But with the new architecture,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:56,120",
+				"to": "00:03:58,720"
+			},
+			"offsets": {
+				"from": 236120,
+				"to": 238720
+			},
+			"text": " it's completely gone, replaced entirely."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:58,720",
+				"to": "00:04:00,960"
+			},
+			"offsets": {
+				"from": 238720,
+				"to": 240960
+			},
+			"text": " The framework now relies on direct synchronous"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:00,960",
+				"to": "00:04:02,600"
+			},
+			"offsets": {
+				"from": 240960,
+				"to": 242600
+			},
+			"text": " C++ communication."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:02,600",
+				"to": "00:04:05,120"
+			},
+			"offsets": {
+				"from": 242600,
+				"to": 245120
+			},
+			"text": " So JavaScript can talk directly to native modules"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:05,120",
+				"to": "00:04:06,720"
+			},
+			"offsets": {
+				"from": 245120,
+				"to": 246720
+			},
+			"text": " without having to translate its intent"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:06,720",
+				"to": "00:04:08,320"
+			},
+			"offsets": {
+				"from": 246720,
+				"to": 248320
+			},
+			"text": " into a giant string first."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:08,320",
+				"to": "00:04:09,840"
+			},
+			"offsets": {
+				"from": 248320,
+				"to": 249840
+			},
+			"text": " It's a real game changer."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:09,840",
+				"to": "00:04:12,840"
+			},
+			"offsets": {
+				"from": 249840,
+				"to": 252840
+			},
+			"text": " So how exactly do they achieve this massive leap?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:12,840",
+				"to": "00:04:15,040"
+			},
+			"offsets": {
+				"from": 252840,
+				"to": 255040
+			},
+			"text": " Well, it boils down to a clear roadmap"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:15,040",
+				"to": "00:04:17,280"
+			},
+			"offsets": {
+				"from": 255040,
+				"to": 257280
+			},
+			"text": " consisting of three core pillars."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:17,280",
+				"to": "00:04:20,320"
+			},
+			"offsets": {
+				"from": 257280,
+				"to": 260320
+			},
+			"text": " First up, JSI, or the JavaScript interface."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:20,320",
+				"to": "00:04:23,680"
+			},
+			"offsets": {
+				"from": 260320,
+				"to": 263680
+			},
+			"text": " Second, turbo modules, and third, fabric."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:23,680",
+				"to": "00:04:26,200"
+			},
+			"offsets": {
+				"from": 263680,
+				"to": 266200
+			},
+			"text": " These three structural upgrades work together"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:26,200",
+				"to": "00:04:28,120"
+			},
+			"offsets": {
+				"from": 266200,
+				"to": 268120
+			},
+			"text": " to basically dynamite the old bridge"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:28,120",
+				"to": "00:04:31,040"
+			},
+			"offsets": {
+				"from": 268120,
+				"to": 271040
+			},
+			"text": " and unlock that highly sought after native level speed."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:31,040",
+				"to": "00:04:32,320"
+			},
+			"offsets": {
+				"from": 271040,
+				"to": 272320
+			},
+			"text": " Let's break them down."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:32,320",
+				"to": "00:04:37,040"
+			},
+			"offsets": {
+				"from": 272320,
+				"to": 277040
+			},
+			"text": " Section four, JSI direct code communication."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:37,040",
+				"to": "00:04:39,800"
+			},
+			"offsets": {
+				"from": 277040,
+				"to": 279800
+			},
+			"text": " Now, this is the first and arguably the most critical pillar"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:39,800",
+				"to": "00:04:41,520"
+			},
+			"offsets": {
+				"from": 279800,
+				"to": 281520
+			},
+			"text": " because it fundamentally rewrites"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:41,520",
+				"to": "00:04:43,560"
+			},
+			"offsets": {
+				"from": 281520,
+				"to": 283560
+			},
+			"text": " how the framework's core operates."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:43,560",
+				"to": "00:04:45,960"
+			},
+			"offsets": {
+				"from": 283560,
+				"to": 285960
+			},
+			"text": " JSI stands for JavaScript interface."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:45,960",
+				"to": "00:04:49,520"
+			},
+			"offsets": {
+				"from": 285960,
+				"to": 289520
+			},
+			"text": " It's a brand new layer that entirely replaces the old bridge."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:49,520",
+				"to": "00:04:52,400"
+			},
+			"offsets": {
+				"from": 289520,
+				"to": 292400
+			},
+			"text": " It allows JavaScript to hold actual direct references"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:52,400",
+				"to": "00:04:55,600"
+			},
+			"offsets": {
+				"from": 292400,
+				"to": 295600
+			},
+			"text": " to native C++ elements, which are known as host objects,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:55,600",
+				"to": "00:04:58,280"
+			},
+			"offsets": {
+				"from": 295600,
+				"to": 298280
+			},
+			"text": " and communicate directly with native code."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:58,280",
+				"to": "00:05:01,000"
+			},
+			"offsets": {
+				"from": 298280,
+				"to": 301000
+			},
+			"text": " Essentially, JSI is like giving JavaScript and native code"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:01,000",
+				"to": "00:05:03,720"
+			},
+			"offsets": {
+				"from": 301000,
+				"to": 303720
+			},
+			"text": " the ability to finally speak the same language fluently."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:03,720",
+				"to": "00:05:06,040"
+			},
+			"offsets": {
+				"from": 303720,
+				"to": 306040
+			},
+			"text": " No more passing written notes through a slow translator."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:06,040",
+				"to": "00:05:08,040"
+			},
+			"offsets": {
+				"from": 306040,
+				"to": 308040
+			},
+			"text": " They can invoke each other's methods synchronously."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:08,040",
+				"to": "00:05:10,640"
+			},
+			"offsets": {
+				"from": 308040,
+				"to": 310640
+			},
+			"text": " It instantly strips away that entire slow serialization"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:10,640",
+				"to": "00:05:11,800"
+			},
+			"offsets": {
+				"from": 310640,
+				"to": 311800
+			},
+			"text": " process."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:11,800",
+				"to": "00:05:16,440"
+			},
+			"offsets": {
+				"from": 311800,
+				"to": 316440
+			},
+			"text": " Moving right along to section five, turbo modules, and fabric."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:16,440",
+				"to": "00:05:19,000"
+			},
+			"offsets": {
+				"from": 316440,
+				"to": 319000
+			},
+			"text": " So with JSI laying the foundation"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:19,000",
+				"to": "00:05:21,160"
+			},
+			"offsets": {
+				"from": 319000,
+				"to": 321160
+			},
+			"text": " for direct instant communication,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:21,160",
+				"to": "00:05:24,280"
+			},
+			"offsets": {
+				"from": 321160,
+				"to": 324280
+			},
+			"text": " the framework can now optimize exactly when and how things load"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:24,280",
+				"to": "00:05:25,920"
+			},
+			"offsets": {
+				"from": 324280,
+				"to": 325920
+			},
+			"text": " and render on the screen."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:25,920",
+				"to": "00:05:28,520"
+			},
+			"offsets": {
+				"from": 325920,
+				"to": 328520
+			},
+			"text": " The crucial point here is how this heavily impacts"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:28,520",
+				"to": "00:05:30,240"
+			},
+			"offsets": {
+				"from": 328520,
+				"to": 330240
+			},
+			"text": " your app's startup times."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:30,240",
+				"to": "00:05:33,040"
+			},
+			"offsets": {
+				"from": 330240,
+				"to": 333040
+			},
+			"text": " In the old system, native modules practically force the app"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:33,040",
+				"to": "00:05:35,200"
+			},
+			"offsets": {
+				"from": 333040,
+				"to": 335200
+			},
+			"text": " to load everything right at startup."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:35,200",
+				"to": "00:05:37,800"
+			},
+			"offsets": {
+				"from": 335200,
+				"to": 337800
+			},
+			"text": " If your app had a Bluetooth module, a camera module,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:37,800",
+				"to": "00:05:40,640"
+			},
+			"offsets": {
+				"from": 337800,
+				"to": 340640
+			},
+			"text": " and a geolocation module, well, they all initialize"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:40,640",
+				"to": "00:05:41,760"
+			},
+			"offsets": {
+				"from": 340640,
+				"to": 341760
+			},
+			"text": " when the app opened."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:41,760",
+				"to": "00:05:44,000"
+			},
+			"offsets": {
+				"from": 341760,
+				"to": 344000
+			},
+			"text": " Even if the user just wanted to read a text article,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:44,000",
+				"to": "00:05:45,560"
+			},
+			"offsets": {
+				"from": 344000,
+				"to": 345560
+			},
+			"text": " it was so inefficient."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:45,560",
+				"to": "00:05:48,200"
+			},
+			"offsets": {
+				"from": 345560,
+				"to": 348200
+			},
+			"text": " Turbo modules fix this flaw entirely."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:48,200",
+				"to": "00:05:49,880"
+			},
+			"offsets": {
+				"from": 348200,
+				"to": 349880
+			},
+			"text": " They lazy load native features only"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:49,880",
+				"to": "00:05:51,840"
+			},
+			"offsets": {
+				"from": 349880,
+				"to": 351840
+			},
+			"text": " when they are specifically required."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:51,840",
+				"to": "00:05:54,280"
+			},
+			"offsets": {
+				"from": 351840,
+				"to": 354280
+			},
+			"text": " This drastically reduces initial startup dime"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:54,280",
+				"to": "00:05:57,080"
+			},
+			"offsets": {
+				"from": 354280,
+				"to": 357080
+			},
+			"text": " and keeps the app's memory usage incredibly lean."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:57,080",
+				"to": "00:06:00,200"
+			},
+			"offsets": {
+				"from": 357080,
+				"to": 360200
+			},
+			"text": " And then, oh man, then there's fabric."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:00,200",
+				"to": "00:06:03,400"
+			},
+			"offsets": {
+				"from": 360200,
+				"to": 363400
+			},
+			"text": " Fabric is the new concurrent UI rendering system"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:03,400",
+				"to": "00:06:06,800"
+			},
+			"offsets": {
+				"from": 363400,
+				"to": 366800
+			},
+			"text": " that completely revolutionizes how React Native updates"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:06,800",
+				"to": "00:06:07,920"
+			},
+			"offsets": {
+				"from": 366800,
+				"to": 367920
+			},
+			"text": " the screen."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:07,920",
+				"to": "00:06:10,400"
+			},
+			"offsets": {
+				"from": 367920,
+				"to": 370400
+			},
+			"text": " By leveraging that direct JSI communication,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:10,400",
+				"to": "00:06:13,360"
+			},
+			"offsets": {
+				"from": 370400,
+				"to": 373360
+			},
+			"text": " we just talked about, Fabric allows UI operations"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:13,360",
+				"to": "00:06:15,360"
+			},
+			"offsets": {
+				"from": 373360,
+				"to": 375360
+			},
+			"text": " to be totally synchronous."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:15,360",
+				"to": "00:06:17,800"
+			},
+			"offsets": {
+				"from": 375360,
+				"to": 377800
+			},
+			"text": " This is the ultimate UI upgrade, really."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:17,800",
+				"to": "00:06:20,880"
+			},
+			"offsets": {
+				"from": 377800,
+				"to": 380880
+			},
+			"text": " It means that complex animations, fluid screen transitions,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:20,880",
+				"to": "00:06:23,080"
+			},
+			"offsets": {
+				"from": 380880,
+				"to": 383080
+			},
+			"text": " and all those multi-touch gestures"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:23,080",
+				"to": "00:06:25,200"
+			},
+			"offsets": {
+				"from": 383080,
+				"to": 385200
+			},
+			"text": " can happen instantly and efficiently,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:25,200",
+				"to": "00:06:27,800"
+			},
+			"offsets": {
+				"from": 385200,
+				"to": 387800
+			},
+			"text": " completely bypassing the old lag."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:27,800",
+				"to": "00:06:29,600"
+			},
+			"offsets": {
+				"from": 387800,
+				"to": 389600
+			},
+			"text": " And what this brilliantly illustrates"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:29,600",
+				"to": "00:06:33,160"
+			},
+			"offsets": {
+				"from": 389600,
+				"to": 393160
+			},
+			"text": " is how Fabric directly enhances the user's tactile experience"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:33,160",
+				"to": "00:06:36,120"
+			},
+			"offsets": {
+				"from": 393160,
+				"to": 396120
+			},
+			"text": " because it optimizes UI elements directly on the main thread"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:36,120",
+				"to": "00:06:37,680"
+			},
+			"offsets": {
+				"from": 396120,
+				"to": 397680
+			},
+			"text": " without waiting for a bridge."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:37,680",
+				"to": "00:06:41,080"
+			},
+			"offsets": {
+				"from": 397680,
+				"to": 401080
+			},
+			"text": " The real world impact is a perfectly seamless experience."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:41,080",
+				"to": "00:06:42,840"
+			},
+			"offsets": {
+				"from": 401080,
+				"to": 402840
+			},
+			"text": " When you're scrolling through a super dense list"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:42,840",
+				"to": "00:06:44,560"
+			},
+			"offsets": {
+				"from": 402840,
+				"to": 404560
+			},
+			"text": " or swiping an element off the screen,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:44,560",
+				"to": "00:06:46,720"
+			},
+			"offsets": {
+				"from": 404560,
+				"to": 406720
+			},
+			"text": " it responds exactly to your touch."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:46,720",
+				"to": "00:06:48,160"
+			},
+			"offsets": {
+				"from": 406720,
+				"to": 408160
+			},
+			"text": " The tactile experience of the app"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:48,160",
+				"to": "00:06:50,120"
+			},
+			"offsets": {
+				"from": 408160,
+				"to": 410120
+			},
+			"text": " literally becomes indistinguishable"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:50,120",
+				"to": "00:06:51,360"
+			},
+			"offsets": {
+				"from": 410120,
+				"to": 411360
+			},
+			"text": " from a pure native build."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:51,360",
+				"to": "00:06:53,160"
+			},
+			"offsets": {
+				"from": 411360,
+				"to": 413160
+			},
+			"text": " No way you could tell the difference."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:53,160",
+				"to": "00:06:54,920"
+			},
+			"offsets": {
+				"from": 413160,
+				"to": 414920
+			},
+			"text": " So to wrap our heads around all this,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:54,920",
+				"to": "00:06:57,080"
+			},
+			"offsets": {
+				"from": 414920,
+				"to": 417080
+			},
+			"text": " here are the absolute core takeaways"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:57,080",
+				"to": "00:06:59,160"
+			},
+			"offsets": {
+				"from": 417080,
+				"to": 419160
+			},
+			"text": " you should keep in mind for your own mobile development"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:59,160",
+				"to": "00:07:00,120"
+			},
+			"offsets": {
+				"from": 419160,
+				"to": 420120
+			},
+			"text": " projects."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:00,120",
+				"to": "00:07:01,880"
+			},
+			"offsets": {
+				"from": 420120,
+				"to": 421880
+			},
+			"text": " The new architecture relies on JSI"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:01,880",
+				"to": "00:07:04,800"
+			},
+			"offsets": {
+				"from": 421880,
+				"to": 424800
+			},
+			"text": " to enable direct communication entirely eliminating"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:04,800",
+				"to": "00:07:06,360"
+			},
+			"offsets": {
+				"from": 424800,
+				"to": 426360
+			},
+			"text": " the slow JSON bridge."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:06,360",
+				"to": "00:07:08,680"
+			},
+			"offsets": {
+				"from": 426360,
+				"to": 428680
+			},
+			"text": " It uses turbo modules to lazy load features,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:08,680",
+				"to": "00:07:11,160"
+			},
+			"offsets": {
+				"from": 428680,
+				"to": 431160
+			},
+			"text": " which just slashes your startup time."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:11,160",
+				"to": "00:07:13,840"
+			},
+			"offsets": {
+				"from": 431160,
+				"to": 433840
+			},
+			"text": " And it implements Fabric to optimize UI rendering"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:13,840",
+				"to": "00:07:15,840"
+			},
+			"offsets": {
+				"from": 433840,
+				"to": 435840
+			},
+			"text": " for buttery smooth animations."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:15,840",
+				"to": "00:07:17,240"
+			},
+			"offsets": {
+				"from": 435840,
+				"to": 437240
+			},
+			"text": " By combining these three pillars,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:17,240",
+				"to": "00:07:20,600"
+			},
+			"offsets": {
+				"from": 437240,
+				"to": 440600
+			},
+			"text": " true native level performance is finally achieved."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:20,600",
+				"to": "00:07:24,160"
+			},
+			"offsets": {
+				"from": 440600,
+				"to": 444160
+			},
+			"text": " Which really leaves us with one massive provocative thought."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:24,160",
+				"to": "00:07:26,840"
+			},
+			"offsets": {
+				"from": 444160,
+				"to": 446840
+			},
+			"text": " With native level performance finally unlocked"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:26,840",
+				"to": "00:07:28,360"
+			},
+			"offsets": {
+				"from": 446840,
+				"to": 448360
+			},
+			"text": " and the friction of the old bridge"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:28,360",
+				"to": "00:07:30,640"
+			},
+			"offsets": {
+				"from": 448360,
+				"to": 450640
+			},
+			"text": " completely removed from the equation,"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:30,640",
+				"to": "00:07:33,680"
+			},
+			"offsets": {
+				"from": 450640,
+				"to": 453680
+			},
+			"text": " is there any reason left to maintain separate native code"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:33,680",
+				"to": "00:07:36,680"
+			},
+			"offsets": {
+				"from": 453680,
+				"to": 456680
+			},
+			"text": " spaces, it's a huge question for the future of pure native"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:36,680",
+				"to": "00:07:38,560"
+			},
+			"offsets": {
+				"from": 456680,
+				"to": 458560
+			},
+			"text": " development for sure."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:38,560",
+				"to": "00:07:40,280"
+			},
+			"offsets": {
+				"from": 458560,
+				"to": 460280
+			},
+			"text": " Thank you so much for learning with me today"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:40,280",
+				"to": "00:07:41,560"
+			},
+			"offsets": {
+				"from": 460280,
+				"to": 461560
+			},
+			"text": " on This Explainer."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:41,560",
+				"to": "00:07:44,560"
+			},
+			"offsets": {
+				"from": 461560,
+				"to": 464560
+			},
+			"text": " Keep building amazing things and I'll catch you in the next one."
+		}
+	]
+}
