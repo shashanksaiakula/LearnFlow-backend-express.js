@@ -1,37 +1,25 @@
+const Course = require("../models/course");
 
-const courses = require("../database/courses");
-
-function getAllCourses() {
-    return courses;
+async function getAllCourses() {
+    return await Course.find();
 }
 
-function getCourseById(getId) {
-    const id = parseInt(getId)
-    const course = courses.find((course) => course.id === id);
-    if (!course) {
-     return null;
-   }
-    return course;
+async function getCourseById(id) {
+    return await Course.findById(id);
+}
+async function getCourseByCourseCode(code){
+    return await Course.findOne({courseCode : code})
 }
 
-function getCoursesWithLessDuration(getDuration) {
-    const duration = parseInt(getDuration)
-    const coursesWithLessDuration = courses.filter((course) =>{
-        const hours = parseInt(course.duration,10)
-        return hours <= duration
-    }
-)    
-    return coursesWithLessDuration;
+async function getRecommendedCourses() {
+    return await Course.find({
+        isFeatured: true
+    });
 }
-
-function getRecommendedCourses(){
-    return courses
-}
-
 
 module.exports = {
     getAllCourses,
     getCourseById,
-    getCoursesWithLessDuration,
-    getRecommendedCourses
+    getRecommendedCourses,
+    getCourseByCourseCode
 };

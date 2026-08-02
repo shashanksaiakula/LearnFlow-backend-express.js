@@ -8,6 +8,13 @@ const courseSchema = new mongoose.Schema(
       trim: true,
     },
 
+    courseCode :{
+      type : String,
+      default : "",
+      required : true,
+      unique: true
+    },
+
     subtitle: {
       type: String,
       default: "",

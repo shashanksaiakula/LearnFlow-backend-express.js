@@ -3,9 +3,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const homeSevice = require('../services/homeService')
-router.get("/home", (req, res) => {
-    res.json(homeSevice.getHomeDetails())
-});
+const homeController = require('../controllers/homeController')
+router.get("/home",homeController.getHomeDetails);
 
 module.exports = router;

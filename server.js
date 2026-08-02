@@ -25,8 +25,12 @@ app.use(
     "/videos",
     express.static(path.join(__dirname, "videos"))  
 );
-connectDatabase()
+async function startServer() {
+    await connectDatabase();
 
-app.listen(PORT, () => {
-    console.log(`🚀 LearnFlow Backend running on port ${PORT}`);
-});
+    app.listen(PORT, () => {
+        console.log(`🚀 LearnFlow Backend running on port ${PORT}`);
+    });
+}
+
+startServer();

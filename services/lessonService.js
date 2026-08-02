@@ -1,21 +1,20 @@
 
 const courses = require("../database/courses");
+const Lessons = require("../models/lesson")
 
-function getLessonByIdwithCourseId(courseId, lessonId){
-     const course = courses.find((course) => course.id === courseId);
+async function getLessonByIdwithCourseCode(courseCode, lessonCode) {
+    return await Lessons.findOne({
+        courseCode,
+        lessonCode
+    })
+}
 
-    if (!course) {
-        return null;
-    }
-
-    const lesson = course.lessons.find(
-        (item) => item.id === lessonId
-    );
-
-    return lesson ?? null;
+async function getAllLessonsByCourseCode(courceCode) {
+    return await Lessons.find({ courseCode: courceCode })
 }
 
 module.exports = {
-    getLessonByIdwithCourseId
+    getLessonByIdwithCourseCode,
+    getAllLessonsByCourseCode
 }
 

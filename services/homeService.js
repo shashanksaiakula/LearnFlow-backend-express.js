@@ -1,9 +1,16 @@
-const express = require("express")
+const coursesService = require("../services/coursesService");
 
-const homeData = require('../database/home') 
-function getHomeDetails(){
-    return homeData
+async function getHomeDetails() {
+
+    const recommendedCourses =
+        await coursesService.getRecommendedCourses();
+    return {
+        continueLearning: {},
+        categories: [],
+        recommendedCourses
+    };
 }
-module.exports ={
+
+module.exports = {
     getHomeDetails
-}
+};

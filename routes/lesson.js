@@ -1,14 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-const lessonService = require("../services/lessonService")
+const lessonController = require("../controllers/lessonController")
 
-router.get("/course/:courseId/lesson/:lessonId", (req,res) =>{
-     const courseId = parseInt(req.params.courseId);
-    const lessonId = parseInt(req.params.lessonId);
+router.get("/course/:courseCode/lesson/:lessonCode",lessonController.getLessonByLessonCode);
 
-   const lesson =  lessonService.getLessonByIdwithCourseId(courseId, lessonId)
-   if(!lesson) return res.status(404).json({error : "Lesson not found"})
-    return res.json(lesson)
-});
+router.get("/course/:courseCode/lessons", lessonController.getAllLessonByCourcesCode)
+
+
 module.exports = router;
