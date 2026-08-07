@@ -61,6 +61,10 @@ const lessonSchema = new mongoose.Schema(
     notesAvailable: {
       type: Boolean,
       default: true,
+    }, 
+    isCompleted : {
+      type : Boolean,
+      default : false,
     }
   },
   {

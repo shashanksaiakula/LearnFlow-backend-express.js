@@ -7,8 +7,8 @@ async function getAllCourses() {
 async function getCourseById(id) {
     return await Course.findById(id);
 }
-async function getCourseByCourseCode(code){
-    return await Course.findOne({courseCode : code})
+async function getCourseByCourseCode(code) {
+    return await Course.findOne({ courseCode: code })
 }
 
 async function getRecommendedCourses() {
@@ -17,9 +17,21 @@ async function getRecommendedCourses() {
     });
 }
 
+async function getPopularCources() {
+    return await Course.find({
+        isPopular: true
+    })
+}
+
+async function getNewCources() {
+    return await Course.find().sort({ createdAt: -1 }).limit(5);
+}
+
 module.exports = {
     getAllCourses,
     getCourseById,
     getRecommendedCourses,
-    getCourseByCourseCode
+    getCourseByCourseCode,
+    getPopularCources,
+    getNewCources
 };

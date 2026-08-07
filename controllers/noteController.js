@@ -3,7 +3,12 @@ const noteService = require("../services/notesServices")
 
 const addNote = async (req, res) => {
 
-    const note = await noteService.addNote(req.body)
+    const noteData = {
+        ...req.body,
+        userId: req.user.userId
+    };
+
+    const note = await noteService.addNote(noteData);
 
     if (!note) {
         return res.status(404).json({
@@ -21,7 +26,7 @@ const addNote = async (req, res) => {
 
 const getNotes = async (req, res) => {
 
-    const notes = await noteService.getNotes(req.params.courseCode, req.params.lessonCode)
+    const notes = await noteService.getNotes(req.params.courseCode, req.params.lessonCode, req.user.userId)
 
     if (notes.length === 0) {
         return res.status(404).json({
@@ -37,32 +42,32 @@ const getNotes = async (req, res) => {
 }
 
 const updateNote = async (req, res) => {
-    const note = await noteService.updateNote(req.body, req.params.noteId)
+    const note = await noteService.updateNote(req.body, req.params.noteId, req.user.userId)
 
     if (!note) {
         return res.status(400).json({
-            success : false,
-            message : "not able to update try after some time"
+            success: false,
+            message: "not able to update try after some time"
         })
     }
     return res.status(200).json({
-        success : true,
-        message : "updated sucessfully"
+        success: true,
+        message: "updated sucessfully"
     })
 }
 
-const deleteNote = async (req, res) =>{
-    const note = await noteService.deleteNote(req.params.noteId)
+const deleteNote = async (req, res) => {
+    const note = await noteService.deleteNote(req.params.noteId, req.user.userId)
 
-    if(!note){
+    if (note.deletedCount === 0) {
         return res.status(400).json({
-            success : false,
-            message : "not able to delete try after some time"
+            success: false,
+            message: "not able to delete try after some time"
         })
     }
-     return res.status(200).json({
-        success : true,
-        message : "deleted sucessfully"
+    return res.status(200).json({
+        success: true,
+        message: "deleted sucessfully"
     })
 }
 

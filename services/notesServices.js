@@ -1,4 +1,3 @@
-
 const Note = require("../models/note")
 
 async function addNote(note) {
@@ -7,16 +6,16 @@ async function addNote(note) {
     return newNote
 }
 
-async function getNotes(courseCode, lessonCode) {
-    const notes = await Note.find({ courseCode: courseCode, lessonCode: lessonCode })
+async function getNotes(courseCode, lessonCode, userId) {
+    const notes = await Note.find({ courseCode: courseCode, lessonCode: lessonCode, userId : userId })
 
     return notes
 }
 
-async function updateNote(body, noteId) {
+async function updateNote(body, noteId, userId) {
 
     const { note } = body
-    const notes = await Note.findOne({ _id: noteId })
+    const notes = await Note.findOne({ _id: noteId, userId })
 
     if (!notes) {
         return null
@@ -28,14 +27,12 @@ async function updateNote(body, noteId) {
     return notes
 }
 
-async function deleteNote(noteId) {
+async function deleteNote(noteId, userId) {
 
-    const note = await Note.deleteOne({ _id: noteId })
+    const note = await Note.deleteOne({ _id: noteId , userId})
 
     return note
 }
-
-
 
 
 module.exports = {

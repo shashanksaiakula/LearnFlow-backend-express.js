@@ -23,6 +23,11 @@ app.use(lessonRouter);
 app.use(transcript)
 app.use(note)
 app.use("/auth",auth)
+
+app.use(
+    "/assets",
+    express.static(path.join(__dirname, "assets"))
+);
 app.use(
     "/videos",
     express.static(path.join(__dirname, "videos"))  

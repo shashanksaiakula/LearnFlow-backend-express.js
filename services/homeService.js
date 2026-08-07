@@ -4,10 +4,17 @@ async function getHomeDetails() {
 
     const recommendedCourses =
         await coursesService.getRecommendedCourses();
+    const propulareCourses = await coursesService.getPopularCources();
+    const newCourses = await coursesService.getNewCources()
     return {
-        continueLearning: {},
+        continueLearning: {
+            title : "React Native Masterclass",
+            progress : 75,
+            thumbnail : "/assets/images/thumbnail/course_001_thumbnail.png",
+        },
         categories: [],
-        recommendedCourses
+        recommendedCourses,
+        propulareCourses,
     };
 }
 
