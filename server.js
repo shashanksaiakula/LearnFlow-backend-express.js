@@ -12,6 +12,7 @@ const lessonRouter = require("./routes/lesson")
 const transcript = require("./routes/transcript")
 const auth = require("./routes/auth");
 const note = require("./routes/note");
+const enroll = require('./routes/emrollment')
 const connectDatabase = require("./config/database");
 // const authenticateToken = require("./middleware/authMiddleware");
 // const db = require("./config/database")
@@ -23,6 +24,7 @@ app.use(lessonRouter);
 app.use(transcript)
 app.use(note)
 app.use("/auth",auth)
+app.use(enroll)
 
 app.use(
     "/assets",
