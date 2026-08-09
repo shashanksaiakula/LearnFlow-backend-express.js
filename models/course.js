@@ -8,10 +8,10 @@ const courseSchema = new mongoose.Schema(
       trim: true,
     },
 
-    courseCode :{
-      type : String,
-      default : "",
-      required : true,
+    courseCode: {
+      type: String,
+      default: "",
+      required: true,
       unique: true
     },
 
@@ -25,6 +25,18 @@ const courseSchema = new mongoose.Schema(
       required: true,
     },
 
+    overview: {
+      description: {
+        type: String,
+        default: "",
+      },
+
+      whatYouWillLearn: [
+        {
+          type: String,
+        },
+      ],
+    },
     thumbnail: {
       type: String,
       required: true,

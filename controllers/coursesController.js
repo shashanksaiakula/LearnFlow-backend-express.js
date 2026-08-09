@@ -39,10 +39,55 @@ function getCourseByDuration(req,res){
         res.json(courses)
 }
 
+async function getInstructorInfo(req, res){
+    const instructor = await coursesService.getInstructorInfo(req.params.name)
+    if(!instructor){
+        return res.status(404).json({
+            success : false,
+            error: "Instructor not found" });
+    }
+
+    return res.status(200).json({
+        success : true,
+        data : instructor
+    })
+}
+
+async function getReviewsByCourse(req, res){
+    const reviews = await coursesService.getRewiewsCoursesCode(req.params.courseCode)
+    if(!reviews){
+        return res.status(404).json({
+            success : false,
+            error: "reviews not found" });
+    }
+
+    return res.status(200).json({
+        success : true,
+        data : reviews
+    })
+}
+
+async function getLessonsByCourse(req, res){
+    const Lessons = await coursesService.getLessonsByCourse(req.params.courseCode)
+    if(!Lessons){
+        return res.status(404).json({
+            success : false,
+            error: "Lessons not found" });
+    }
+
+    return res.status(200).json({
+        success : true,
+        data : Lessons
+    })
+}
+
 
 module.exports = {
     getCourses,
     getCourseById,
     getCourseByCourseCode,
-    getCourseByDuration
+    getCourseByDuration,
+    getInstructorInfo,
+    getReviewsByCourse,
+    getLessonsByCourse
 };

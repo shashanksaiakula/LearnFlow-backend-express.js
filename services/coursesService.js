@@ -1,4 +1,7 @@
 const Course = require("../models/course");
+const Review = require("../models/review")
+const Instructor = require("../models/instructor")
+const Lessons = require("../models/lesson")
 
 async function getAllCourses() {
     return await Course.find();
@@ -27,11 +30,26 @@ async function getNewCources() {
     return await Course.find().sort({ createdAt: -1 }).limit(5);
 }
 
+async function getInstructorInfo(inStructorName){
+    console.log("instructor",inStructorName)
+    return await Instructor.findOne({name : inStructorName})
+}
+
+async function getRewiewsCoursesCode(courseCode){
+    return await Review.find({courseCode : courseCode})
+}
+
+async function getLessonsByCourse(courseCode){
+    return await Lessons.find({courseCode : courseCode})
+}
 module.exports = {
     getAllCourses,
     getCourseById,
     getRecommendedCourses,
     getCourseByCourseCode,
     getPopularCources,
-    getNewCources
+    getNewCources,
+    getInstructorInfo,
+    getRewiewsCoursesCode,
+    getLessonsByCourse
 };

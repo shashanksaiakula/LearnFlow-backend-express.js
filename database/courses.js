@@ -1,4 +1,4 @@
-[
+const courses = [
   {
     "courseCode": "course_001",
     "title": "React Native Masterclass",
@@ -25,7 +25,17 @@
       "Mobile"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Dive deep into React Native and learn to build production-grade mobile apps for both Android and iOS from a single codebase. This masterclass covers navigation, state management, native modules, and performance optimization through real-world projects.",
+      "whatYouWillLearn": [
+        "Set up and structure a scalable React Native project",
+        "Build responsive UIs that work across Android and iOS",
+        "Implement navigation with React Navigation",
+        "Connect native modules and third-party libraries",
+        "Optimize app performance and debug effectively"
+      ]
+    }
   },
   {
     "courseCode": "course_002",
@@ -53,7 +63,17 @@
       "Mobile"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Get up to speed with React Native's New Architecture, including Fabric and TurboModules. Understand how the new rendering and native bridge system works and how to migrate existing apps to take advantage of it.",
+      "whatYouWillLearn": [
+        "Understand the core concepts behind Fabric and TurboModules",
+        "Migrate a legacy React Native app to the New Architecture",
+        "Write custom native modules using the new bridge",
+        "Improve rendering performance with the new architecture",
+        "Troubleshoot common migration issues"
+      ]
+    }
   },
   {
     "courseCode": "course_003",
@@ -81,7 +101,17 @@
       "Mobile"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Master state management in React Native and React apps using Redux Toolkit. Learn slices, async thunks, and best practices for structuring scalable, maintainable global state.",
+      "whatYouWillLearn": [
+        "Set up Redux Toolkit in a React Native project",
+        "Create slices, reducers, and actions the modern way",
+        "Handle async data fetching with createAsyncThunk",
+        "Connect Redux state to components efficiently",
+        "Debug state with Redux DevTools"
+      ]
+    }
   },
   {
     "courseCode": "course_004",
@@ -108,7 +138,17 @@
       "API"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Build robust, production-ready REST APIs using Node.js and Express. Cover routing, middleware, authentication, error handling, and deployment practices used in real backend systems.",
+      "whatYouWillLearn": [
+        "Design and structure a Node.js and Express project",
+        "Build RESTful routes and middleware pipelines",
+        "Implement authentication and authorization",
+        "Handle errors and validate incoming requests",
+        "Deploy and scale a Node.js API"
+      ]
+    }
   },
   {
     "courseCode": "course_005",
@@ -134,7 +174,17 @@
       "NoSQL"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Learn MongoDB from the ground up, from installing and querying the database to designing efficient schemas and using aggregation pipelines for complex data operations.",
+      "whatYouWillLearn": [
+        "Install and configure MongoDB for development",
+        "Perform CRUD operations with the MongoDB driver",
+        "Design efficient, scalable document schemas",
+        "Use indexes to improve query performance",
+        "Build aggregation pipelines for data analysis"
+      ]
+    }
   },
   {
     "courseCode": "course_006",
@@ -161,7 +211,17 @@
       "TypeScript"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Sharpen your core JavaScript skills with a deep dive into modern ES6+ features, asynchronous programming, closures, and functional patterns that power today's frontend frameworks.",
+      "whatYouWillLearn": [
+        "Master ES6+ syntax including destructuring and spread operators",
+        "Understand closures, scope, and the 'this' keyword",
+        "Work confidently with promises and async/await",
+        "Apply functional programming patterns in JavaScript",
+        "Write cleaner, more maintainable modern JavaScript"
+      ]
+    }
   },
   {
     "courseCode": "course_007",
@@ -188,7 +248,17 @@
       "TypeScript"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Learn TypeScript from the fundamentals to advanced type system features. Add type safety to your JavaScript projects and catch errors before they reach production.",
+      "whatYouWillLearn": [
+        "Understand TypeScript's type system and core syntax",
+        "Use interfaces, generics, and utility types effectively",
+        "Migrate a JavaScript project to TypeScript",
+        "Configure the TypeScript compiler for real projects",
+        "Apply type-safe patterns in React applications"
+      ]
+    }
   },
   {
     "courseCode": "course_008",
@@ -215,7 +285,17 @@
       "TypeScript"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "A complete guide to building modern web applications with React.js. Learn components, hooks, routing, and state management while building real projects from scratch.",
+      "whatYouWillLearn": [
+        "Build reusable components with React and JSX",
+        "Manage component state and side effects with hooks",
+        "Implement client-side routing with React Router",
+        "Fetch and display data from external APIs",
+        "Structure and deploy a complete React application"
+      ]
+    }
   },
   {
     "courseCode": "course_009",
@@ -242,7 +322,17 @@
       "Jetpack Compose"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Learn Kotlin for native Android development, from language fundamentals to building complete apps using modern Android tooling and best practices.",
+      "whatYouWillLearn": [
+        "Write idiomatic Kotlin code for Android",
+        "Understand Kotlin's null safety and coroutines",
+        "Build Android UIs using Kotlin",
+        "Work with Android Architecture Components",
+        "Structure and test a Kotlin-based Android app"
+      ]
+    }
   },
   {
     "courseCode": "course_010",
@@ -268,7 +358,17 @@
       "iOS"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Get started with SwiftUI and build declarative, native iOS user interfaces. Learn views, state management, and navigation the modern Apple way.",
+      "whatYouWillLearn": [
+        "Understand SwiftUI's declarative syntax and view system",
+        "Manage state with @State, @Binding, and @ObservedObject",
+        "Build navigation flows and lists in SwiftUI",
+        "Style and animate SwiftUI views",
+        "Build and preview a complete iOS app UI"
+      ]
+    }
   },
   {
     "courseCode": "course_011",
@@ -295,7 +395,17 @@
       "Jetpack Compose"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Learn Android Jetpack Compose, Google's modern toolkit for building native UIs declaratively. Move beyond XML layouts and build faster, more maintainable Android interfaces.",
+      "whatYouWillLearn": [
+        "Understand Compose's declarative UI model",
+        "Build layouts using Composable functions",
+        "Manage UI state within Compose",
+        "Handle navigation in a Compose-based app",
+        "Style and theme apps using Material 3"
+      ]
+    }
   },
   {
     "courseCode": "course_012",
@@ -322,7 +432,17 @@
       "API"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Integrate Firebase into your mobile apps for authentication, real-time databases, cloud storage, and push notifications, using practical, production-style examples.",
+      "whatYouWillLearn": [
+        "Set up Firebase in a mobile application",
+        "Implement authentication with Firebase Auth",
+        "Read and write data with Firestore in real time",
+        "Store and retrieve files with Firebase Storage",
+        "Send push notifications with Firebase Cloud Messaging"
+      ]
+    }
   },
   {
     "courseCode": "course_013",
@@ -348,7 +468,17 @@
       "GitHub"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Master Git and GitHub for real-world software development workflows, including branching strategies, pull requests, merge conflict resolution, and team collaboration.",
+      "whatYouWillLearn": [
+        "Understand core Git concepts: commits, branches, and merges",
+        "Resolve merge conflicts confidently",
+        "Collaborate on GitHub using pull requests and reviews",
+        "Use branching strategies for team projects",
+        "Recover from mistakes using Git history"
+      ]
+    }
   },
   {
     "courseCode": "course_014",
@@ -375,7 +505,17 @@
       "API"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Learn the principles of well-designed REST APIs, from resource modeling and versioning to authentication, pagination, and documentation best practices.",
+      "whatYouWillLearn": [
+        "Design resource-oriented, RESTful endpoints",
+        "Apply proper HTTP methods and status codes",
+        "Version and document APIs effectively",
+        "Implement pagination, filtering, and sorting",
+        "Secure APIs with authentication best practices"
+      ]
+    }
   },
   {
     "courseCode": "course_015",
@@ -401,7 +541,17 @@
       "CI/CD"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Get hands-on with Docker fundamentals: containerize applications, manage images, and orchestrate multi-container environments for consistent development and deployment.",
+      "whatYouWillLearn": [
+        "Understand containers versus virtual machines",
+        "Build and manage Docker images with Dockerfiles",
+        "Run and network multi-container apps with Docker Compose",
+        "Persist data using Docker volumes",
+        "Deploy containerized applications confidently"
+      ]
+    }
   },
   {
     "courseCode": "course_016",
@@ -427,7 +577,17 @@
       "Design"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Learn UI design fundamentals and practical Figma workflows to design polished, user-friendly interfaces, from wireframes to interactive prototypes.",
+      "whatYouWillLearn": [
+        "Navigate Figma's interface and core tools",
+        "Apply layout, typography, and color principles",
+        "Build reusable components and design systems",
+        "Create interactive prototypes for user testing",
+        "Hand off designs to developers effectively"
+      ]
+    }
   },
   {
     "courseCode": "course_017",
@@ -453,7 +613,17 @@
       "ML"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "A practical introduction to AI for software developers. Learn how to integrate AI models and APIs into applications without needing a deep machine learning background.",
+      "whatYouWillLearn": [
+        "Understand core AI and machine learning concepts",
+        "Integrate AI APIs into applications",
+        "Work with prompts and language models effectively",
+        "Evaluate AI model outputs for reliability",
+        "Build simple AI-powered features end to end"
+      ]
+    }
   },
   {
     "courseCode": "course_018",
@@ -479,7 +649,17 @@
       "ML"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "An approachable introduction to machine learning fundamentals, covering supervised and unsupervised learning, model training, and evaluation using practical examples.",
+      "whatYouWillLearn": [
+        "Understand core machine learning concepts and terminology",
+        "Differentiate supervised and unsupervised learning",
+        "Train and evaluate simple ML models",
+        "Prepare and preprocess data for training",
+        "Avoid common pitfalls like overfitting"
+      ]
+    }
   },
   {
     "courseCode": "course_019",
@@ -504,7 +684,17 @@
       "Python"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Build a solid foundation in Python programming, covering syntax, data structures, functions, and object-oriented programming through hands-on exercises.",
+      "whatYouWillLearn": [
+        "Understand Python syntax and core data types",
+        "Work with lists, dictionaries, and functions",
+        "Apply object-oriented programming concepts in Python",
+        "Handle files and exceptions in Python",
+        "Write clean, idiomatic Python code"
+      ]
+    }
   },
   {
     "courseCode": "course_020",
@@ -529,7 +719,17 @@
       "Clean Architecture"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Learn Clean Architecture principles to design maintainable, testable, and scalable software systems that stay flexible as requirements evolve.",
+      "whatYouWillLearn": [
+        "Understand the core layers of Clean Architecture",
+        "Separate business logic from frameworks and UI",
+        "Apply dependency inversion effectively",
+        "Design testable, decoupled system components",
+        "Refactor an existing codebase toward Clean Architecture"
+      ]
+    }
   },
   {
     "courseCode": "course_021",
@@ -556,7 +756,17 @@
       "API"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Learn GraphQL essentials, from schema design to queries, mutations, and resolvers, and understand when and how to use it instead of traditional REST APIs.",
+      "whatYouWillLearn": [
+        "Understand GraphQL's schema and type system",
+        "Write queries, mutations, and resolvers",
+        "Handle errors and validation in GraphQL",
+        "Optimize queries to avoid over-fetching",
+        "Integrate a GraphQL API with a frontend app"
+      ]
+    }
   },
   {
     "courseCode": "course_022",
@@ -583,7 +793,17 @@
       "TypeScript"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Learn to build and deploy production-ready applications with Next.js, covering routing, server-side rendering, API routes, and performance optimization.",
+      "whatYouWillLearn": [
+        "Build pages and layouts using the Next.js App Router",
+        "Implement server-side rendering and static generation",
+        "Create API routes within a Next.js app",
+        "Optimize images, fonts, and performance",
+        "Deploy a Next.js application to production"
+      ]
+    }
   },
   {
     "courseCode": "course_023",
@@ -608,7 +828,17 @@
       "AWS"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "A beginner-friendly introduction to Amazon Web Services, covering core services like EC2, S3, and IAM, and the fundamentals of deploying applications to the cloud.",
+      "whatYouWillLearn": [
+        "Understand core AWS services and their use cases",
+        "Launch and manage EC2 instances",
+        "Store and serve files using S3",
+        "Manage access and permissions with IAM",
+        "Deploy a simple application to AWS"
+      ]
+    }
   },
   {
     "courseCode": "course_024",
@@ -634,7 +864,17 @@
       "CI/CD"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Learn to automate build, test, and deployment pipelines using GitHub Actions, and adopt CI/CD practices that keep your codebase reliable and shippable.",
+      "whatYouWillLearn": [
+        "Understand core CI/CD concepts and workflows",
+        "Write GitHub Actions workflow files",
+        "Automate testing on every pull request",
+        "Build automated deployment pipelines",
+        "Manage secrets and environments safely"
+      ]
+    }
   },
   {
     "courseCode": "course_025",
@@ -662,6 +902,18 @@
       "Mobile"
     ],
     "createdAt": "2026-07-01T10:00:00.000Z",
-    "updatedAt": "2026-07-20T12:00:00.000Z"
+    "updatedAt": "2026-07-20T12:00:00.000Z",
+    "overview": {
+      "description": "Learn to test React Native applications thoroughly, from unit tests to component and end-to-end testing, to ship mobile apps with confidence.",
+      "whatYouWillLearn": [
+        "Write unit tests for React Native logic with Jest",
+        "Test components using React Native Testing Library",
+        "Mock native modules and API calls in tests",
+        "Set up end-to-end tests for mobile flows",
+        "Integrate testing into a CI pipeline"
+      ]
+    }
   }
-]
+];
+
+module.exports = courses;

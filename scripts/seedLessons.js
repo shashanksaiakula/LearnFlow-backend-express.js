@@ -1,35 +1,34 @@
 require("dotenv").config();
-
 const mongoose = require("mongoose");
-
 const Lesson = require("../models/lesson");
-
-const lessons = require("../database/lesson.json");
+const lessons = require("../database/lesson");
 
 async function seedLessons() {
-    try {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log("✅ MongoDB Connected");
 
-        await mongoose.connect(process.env.MONGODB_URI);
+    await Lesson.deleteMany();
+    console.log("🗑️ Old lessons deleted");
 
-        console.log("✅ MongoDB Connected");
+    // Check array length
+    console.log(`📦 Local file contains ${lessons.length} items.`);
 
-        await Lesson.deleteMany();
-
-        console.log("Old lessons deleted");
-
-        await Lesson.insertMany(lessons);
-
-        console.log("Lessons inserted successfully");
-
-        process.exit();
-
-    } catch (error) {
-
-        console.error(error);
-
-        process.exit(1);
-
+    // insertMany with ordered: false to skip broken records instead of crashing
+    const result = await Lesson.insertMany(lessons, { ordered: false });
+    console.log(`🎉 Successfully inserted ${result.length} lessons`);
+    
+    process.exit(0);
+  } catch (error) {
+    // If ordered: false, error.writeErrors will show you exactly which items failed
+    if (error.writeErrors) {
+      console.error(`⚠️ Schema validation failed for ${error.writeErrors.length} items.`);
+      console.log(`✅ Successfully inserted ${error.insertedDocs.length} valid items.`);
+    } else {
+      console.error("❌ Fatal Error:", error);
     }
+    process.exit(1);
+  }
 }
 
 seedLessons();
