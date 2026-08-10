@@ -13,6 +13,7 @@ const transcript = require("./routes/transcript")
 const auth = require("./routes/auth");
 const note = require("./routes/note");
 const enroll = require('./routes/emrollment')
+const bookmark = require('./routes/bookmark')
 const connectDatabase = require("./config/database");
 // const authenticateToken = require("./middleware/authMiddleware");
 // const db = require("./config/database")
@@ -25,6 +26,7 @@ app.use(transcript)
 app.use(note)
 app.use("/auth",auth)
 app.use(enroll)
+app.use(bookmark)
 
 app.use(
     "/assets",
