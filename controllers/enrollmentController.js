@@ -37,8 +37,8 @@ async function getEnrollbyUserId(req, res) {
 }
 
 async function updateEnrollment(req,res) {
-    const {currentLessonCode,currentLessonPosition,progress, completedLessonCode} = req.body
-        const enroll = await enrollmentServices.updateEnrollement(req.params.id, currentLessonCode,currentLessonPosition,progress,completedLessonCode)
+    const {currentLessonCode,currentLessonPosition,progress, completedLessonCode, lastPlayedLessonCode,lastPlayedLessonPosition} = req.body
+        const enroll = await enrollmentServices.updateEnrollement(req.params.id, currentLessonCode,currentLessonPosition,progress,completedLessonCode,lastPlayedLessonCode,lastPlayedLessonPosition)
 
     if (!enroll) {
         return res.status(400).json({

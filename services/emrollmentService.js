@@ -15,25 +15,31 @@ async function getAllEnrolledCousres(userId) {
     return await Emrollment.find({ userId })
 }
 
-async function updateEnrollement(id, lessonCode, currentLessonPosition, progress, completedLessonCode) {
-    const emrollement = await Emrollment.findById({ _id: id })
+async function updateEnrollement(id, lessonCode, currentLessonPosition, progress, completedLessonCode, lastPlayedLessonCode, lastPlayedLessonPosition) {
+    const enrollement = await Emrollment.findById({ _id: id })
     if (lessonCode !== undefined) {
-        emrollement.currentLessonCode = lessonCode
+        enrollement.currentLessonCode = lessonCode
     }
 
     if (currentLessonPosition !== undefined) {
-        emrollement.currentLessonPosition = currentLessonPosition
+        enrollement.currentLessonPosition = currentLessonPosition
     }
-    if (progress > 0 && progress > emrollement.progress) {
-        emrollement.progress = progress;
+    if (progress > 0 && progress > enrollement.progress) {
+        enrollement.progress = progress;
     }
-    if (completedLessonCode !== undefined && !emrollement.completedLessonCode.includes(completedLessonCode)) {
-        emrollement.completedLessonCode.push(completedLessonCode)
+    if (completedLessonCode !== undefined && !enrollement.completedLessonCode.includes(completedLessonCode)) {
+        enrollement.completedLessonCode.push(completedLessonCode)
     }
-    
-    await emrollement.save()
+    if (lastPlayedLessonCode !== undefined) {
+        enrollement.lastPlayedLessonCode = lastPlayedLessonCode
+    }
+    if (lastPlayedLessonPosition !== undefined) {
+        enrollement.lastPlayedLessonPosition = lastPlayedLessonPosition
+    }
 
-    return emrollement
+    await enrollement.save()
+
+    return enrollement
 }
 
 
