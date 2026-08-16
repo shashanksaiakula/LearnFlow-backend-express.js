@@ -1,20 +1,21 @@
 const coursesService = require("../services/coursesService");
+const enrollemtServices = require("../services/emrollmentService")
+const bookmarkedServices = require("../services/bookmarkService")
 
-async function getHomeDetails() {
+async function getHomeDetails(userId) {
 
     const recommendedCourses =
         await coursesService.getRecommendedCourses();
-    const propulareCourses = await coursesService.getPopularCources();
-    const newCourses = await coursesService.getNewCources()
+    const enrolledCousrces = await enrollemtServices.getAllEnrolledCousres(userId)
+    const continueLearning = await enrollemtServices.getLastCousreWatched(userId)
+    const bookmarked = await bookmarkedServices.getBookmarks(userId)
+    // const continueLearning = 
+
     return {
-        continueLearning: {
-            title : "React Native Masterclass",
-            progress : 75,
-            thumbnail : "/assets/images/thumbnail/course_001_thumbnail.png",
-        },
-        categories: [],
+        continueLearning,
+        enrolledCousrces,
         recommendedCourses,
-        propulareCourses,
+        bookmarked
     };
 }
 

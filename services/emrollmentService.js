@@ -1,7 +1,7 @@
-const Emrollment = require('../models/enrollment')
+const Enrollment = require('../models/enrollment')
 
 async function enrollToCousre(userId, courseCode, lessonCode, loessonPosition) {
-    const enroll = await Emrollment.create({
+    const enroll = await Enrollment.create({
         userId,
         courseCode,
         currentLessonCode: lessonCode,
@@ -12,11 +12,11 @@ async function enrollToCousre(userId, courseCode, lessonCode, loessonPosition) {
 }
 
 async function getAllEnrolledCousres(userId) {
-    return await Emrollment.find({ userId })
+    return await Enrollment.find({ userId })
 }
 
 async function updateEnrollement(id, lessonCode, currentLessonPosition, progress, completedLessonCode, lastPlayedLessonCode, lastPlayedLessonPosition) {
-    const enrollement = await Emrollment.findById({ _id: id })
+    const enrollement = await Enrollment.findById({ _id: id })
     if (lessonCode !== undefined) {
         enrollement.currentLessonCode = lessonCode
     }
@@ -42,9 +42,13 @@ async function updateEnrollement(id, lessonCode, currentLessonPosition, progress
     return enrollement
 }
 
+async function getLastCousreWatched(userId) {
+       return await Enrollment.findOne({ userId: userId }).sort({ updatedAt: -1 });
+}
 
 module.exports = {
     enrollToCousre,
     getAllEnrolledCousres,
-    updateEnrollement
+    updateEnrollement,
+    getLastCousreWatched
 }
