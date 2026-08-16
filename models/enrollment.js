@@ -18,12 +18,26 @@ const enrollmentSchema = new mongoose.Schema(
       enum: ["active", "completed", "cancelled"],
       default: "active",
     },
-
+    completedLessonCode:{
+      type : [String],
+      default : []
+    },
     progress: {
       type: Number,
       default: 0,
       min: 0,
       max: 100,
+    },
+
+    currentLessonCode: {
+      type: String,
+      default: null,
+    },
+
+    currentLessonPosition: {
+      type: Number,
+      default: 0,
+      min: 0,
     },
 
     enrolledAt: {

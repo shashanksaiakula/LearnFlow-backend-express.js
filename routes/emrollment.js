@@ -4,7 +4,8 @@ const router = express.Router()
 const enrollmentController = require('../controllers/enrollmentController')
 const authenticateToken = require("../middleware/authMiddleware")
 
-router.post("/enrollment/:courseCode", authenticateToken, enrollmentController.enrollToCousre)
+router.post("/enrollment/:courseCode/:lessonCode", authenticateToken, enrollmentController.enrollToCousre)
+router.put("/enrollment/:id", authenticateToken, enrollmentController.updateEnrollment)
 router.get('/enrollment', authenticateToken, enrollmentController.getEnrollbyUserId)
 
 

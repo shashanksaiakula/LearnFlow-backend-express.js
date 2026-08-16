@@ -10,8 +10,12 @@ async function getLessonByIdwithCourseCode(courseCode, lessonCode) {
 }
 
 async function getAllLessonsByCourseCode(courceCode) {
-    return await Lessons.find({ courseCode: courceCode })
+    const lessons = await Lessons.find({ courseCode: courceCode });
+
+    // This physically rearranges the array before returning it
+    return lessons.sort((a, b) => a.lessonNumber - b.lessonNumber);
 }
+
 
 module.exports = {
     getLessonByIdwithCourseCode,
