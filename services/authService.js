@@ -1,6 +1,8 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const crypto = require("crypto");
+const emailService = require("./emailService");
 
 const SECRET_KEY = process.env.SECRET_KEY;
 
@@ -62,21 +64,21 @@ async function login(body) {
     };
 }
 
-const getUserById= async(userId) => {
+const getUserById = async (userId) => {
     const user = await User.findById(userId).select("-password")
 
-    if(!user){
+    if (!user) {
         return null
     }
     return user
 }
 
-const changePassword = async(oldPassword ,newPassword ,userId)=>{
+const changePassword = async (oldPassword, newPassword, userId) => {
     const user = await User.findById(userId)
 
     const isPasswordMatching = await bcrypt.compare(oldPassword, user.password)
 
-    if(!isPasswordMatching){
+    if (!isPasswordMatching) {
         return "Password not matching"
     }
 
@@ -121,11 +123,122 @@ async function updateProfile(userId, body) {
         dateOfBirth: user.dateOfBirth
     };
 }
+async function forgotPassword(email) {
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+        return;
+    }
+    const resetToken = crypto
+        .randomBytes(12)
+        .toString("hex");
+
+    const hashedToken = crypto
+        .createHash("sha256")
+        .update(resetToken)
+        .digest("hex");
+
+    console.log("RESET TOKEN:", resetToken);
+    console.log("HASHED TOKEN:", hashedToken);
+
+    user.passwordResetToken = hashedToken;
+
+    user.passwordResetExpires =
+        Date.now() + 15 * 60 * 1000;
+
+    await user.save();
+
+    await emailService.sendPasswordResetEmail(
+        user.email,
+        resetToken
+    );
+}
+
+async function resetPassword(token, newPassword) {
+
+    const hashedToken = crypto
+        .createHash("sha256")
+        .update(token)
+        .digest("hex");
+
+
+    const user = await User.findOne({
+        passwordResetToken: hashedToken,
+        passwordResetExpires: {
+            $gt: Date.now()
+        }
+    });
+
+    if (!user) {
+        return null
+    }
+    const hashedPassword =
+        await bcrypt.hash(newPassword, 10);
+
+    user.password = hashedPassword;
+    user.passwordResetToken = null;
+    user.passwordResetExpires = null;
+
+    await user.save();
+    return user
+}
+
+async function verifyEmail(token) {
+
+    const hashingToken = crypto
+        .createHash("sha256")
+        .update(token.toString())
+        .digest("hex");
+    const user = await User.findOne({
+        emailVerificationToken: hashingToken,
+        emailVerificationExpires: {
+            $gt: Date.now()
+        }
+    })
+
+    if (!user) {
+        return null
+    }
+
+    user.isEmailVerified = true
+    user.emailVerificationToken = null
+    user.emailVerificationExpires = null
+
+    await user.save()
+    return user
+}
+
+async function resendVerifyEmail(email) {
+
+    const user = await User.findOne({ email })
+
+    if (!user) {
+        return null
+    }
+    const token = Math.floor(1000 + Math.random() * 9000);
+    const hashToken = crypto
+        .createHash("sha256")
+        .update(token.toString())
+        .digest("hex");
+    const expiryTime = Date.now() + 72 * 60 * 60 * 1000;
+
+    user.emailVerificationToken = hashToken
+    user.emailVerificationExpires = expiryTime
+    emailService.sendVerificationToken(email, token)
+    await user.save()
+    return user
+}
+
 
 
 module.exports = {
     login,
     getUserById,
     changePassword,
-    updateProfile
+    updateProfile,
+    forgotPassword,
+    resetPassword,
+    verifyEmail,
+    resendVerifyEmail
 };

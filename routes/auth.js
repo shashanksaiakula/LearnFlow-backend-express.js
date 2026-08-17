@@ -5,14 +5,14 @@ const authenticateToken = require("../middleware/authMiddleware")
 const router = express.Router()
 
 router.post("/login", authController.login)
-router.get("/profile",authenticateToken,authController.getProfile)
-router.post("/register",authController.register)
-router.post("/changePassword",authenticateToken,authController.changePassword)
-router.post("/logout",authenticateToken,authController.logout)
-router.put(
-    "/editProfile",
-    authenticateToken,
-    authController.updateProfile
-);
+router.get("/profile", authenticateToken, authController.getProfile)
+router.post("/register", authController.register)
+router.post("/changePassword", authenticateToken, authController.changePassword)
+router.post("/logout", authenticateToken, authController.logout)
+router.put("/editProfile", authenticateToken, authController.updateProfile);
+router.post("/forgotPassword", authController.forgotPassword);
+router.post("/resetPassword", authController.resetPassword);
+router.post("/verifyEmail", authController.verifyEmail);
+router.post("/resendVerifyEmailToken", authController.resendVerifyEmail);
 
 module.exports = router

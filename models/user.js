@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema(
 
     dateOfBirth: {
       type: Date,
-      default : null,
+      default: null,
     },
 
     isEmailVerified: {
@@ -45,9 +45,27 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
-    phoneNumber :{
-      type : Number,
-      default : 0
+    phoneNumber: {
+      type: Number,
+      default: 0
+    },
+    passwordResetToken: {
+      type: String,
+      default: null,
+    },
+
+    passwordResetExpires: {
+      type: Date,
+      default: null,
+    },
+    emailVerificationToken: {
+      type: String,
+      default: null,
+    },
+
+    emailVerificationExpires: {
+      type: Date,
+      default: null,
     },
   },
   {
