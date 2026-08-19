@@ -1,0 +1,1022 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "F:\\LLM\\models\\ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:08,040"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 8040
+			},
+			"text": " Welcome back builders. Welcome to another explainer today. We're bringing some serious high energy to a topic that has quite frankly"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:08,600",
+				"to": "00:00:17,280"
+			},
+			"offsets": {
+				"from": 8600,
+				"to": 17280
+			},
+			"text": " Completely revolutionized how mobile applications are built. We're gonna master mobile app architecture by looking under the hood of one of the most powerful platforms out there right now"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:17,280",
+				"to": "00:00:24,280"
+			},
+			"offsets": {
+				"from": 17280,
+				"to": 24280
+			},
+			"text": " Firebase we've dug through the documentation the developer blogs the architecture guides and we're distilling all of it right here"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:24,280",
+				"to": "00:00:26,280"
+			},
+			"offsets": {
+				"from": 24280,
+				"to": 26280
+			},
+			"text": " So you can master these concepts"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:26,280",
+				"to": "00:00:32,080"
+			},
+			"offsets": {
+				"from": 26280,
+				"to": 32080
+			},
+			"text": " Think about that for a second. If you've ever tried to build an app from scratch, you know that writing the code for what the user actually sees"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:32,220",
+				"to": "00:00:34,120"
+			},
+			"offsets": {
+				"from": 32220,
+				"to": 34120
+			},
+			"text": " That's only half the battle"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:34,120",
+				"to": "00:00:41,560"
+			},
+			"offsets": {
+				"from": 34120,
+				"to": 41560
+			},
+			"text": " Historically you had to provision servers maintain operating systems configure load balancers and write just massive amounts of back-end logic"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:41,560",
+				"to": "00:00:44,360"
+			},
+			"offsets": {
+				"from": 41560,
+				"to": 44360
+			},
+			"text": " Just to get a simple login screen or a database to work"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:44,480",
+				"to": "00:00:48,000"
+			},
+			"offsets": {
+				"from": 44480,
+				"to": 48000
+			},
+			"text": " It was exhausting, but what if you could just skip all of that?"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:48,120",
+				"to": "00:00:51,600"
+			},
+			"offsets": {
+				"from": 48120,
+				"to": 51600
+			},
+			"text": " What if you could focus purely on crafting an incredible user experience?"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:52,120",
+				"to": "00:00:58,160"
+			},
+			"offsets": {
+				"from": 52120,
+				"to": 58160
+			},
+			"text": " Okay, let's dive into this our roadmap today starts with the concept of the serverless mobile back-end"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:58,400",
+				"to": "00:01:03,600"
+			},
+			"offsets": {
+				"from": 58400,
+				"to": 63600
+			},
+			"text": " Then we'll cover choosing your firebase database compare firestore and the real-time database"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:03,760",
+				"to": "00:01:09,520"
+			},
+			"offsets": {
+				"from": 63760,
+				"to": 69520
+			},
+			"text": " Look at engaging users with messaging and finally we'll tie it all together into a complete mobile architecture"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:10,000",
+				"to": "00:01:15,280"
+			},
+			"offsets": {
+				"from": 70000,
+				"to": 75280
+			},
+			"text": " All right kicking things off with section one the serverless mobile back-end. Let's look at the foundation"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:15,480",
+				"to": "00:01:22,960"
+			},
+			"offsets": {
+				"from": 75480,
+				"to": 82960
+			},
+			"text": " So firebase is what we call a back-end as a service or BaaS. It's a cloud model where the provider in this case Google gives you"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:22,960",
+				"to": "00:01:26,120"
+			},
+			"offsets": {
+				"from": 82960,
+				"to": 86120
+			},
+			"text": " Ready to use back-end services and why is this such a game-changer?"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:26,760",
+				"to": "00:01:32,400"
+			},
+			"offsets": {
+				"from": 86760,
+				"to": 92400
+			},
+			"text": " Because it fundamentally shifts your focus as a developer it literally eliminates the need for you to manage infrastructure"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:33,080",
+				"to": "00:01:39,200"
+			},
+			"offsets": {
+				"from": 93080,
+				"to": 99200
+			},
+			"text": " You get databases authentication file storage analytics all of it accessible directly from your front-end code"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:39,720",
+				"to": "00:01:45,640"
+			},
+			"offsets": {
+				"from": 99720,
+				"to": 105640
+			},
+			"text": " Moving right along to section two choosing your firebase database. This is where we hit a pretty critical fork in the road"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:45,960",
+				"to": "00:01:52,720"
+			},
+			"offsets": {
+				"from": 105960,
+				"to": 112720
+			},
+			"text": " You have to decide exactly how you're going to store your data and firebase gives you two flagship database solutions"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:52,800",
+				"to": "00:01:57,960"
+			},
+			"offsets": {
+				"from": 112800,
+				"to": 117960
+			},
+			"text": " They're both no sequel. They're both cloud-hosted and they both offer real-time syncing across clients"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:58,000",
+				"to": "00:02:00,480"
+			},
+			"offsets": {
+				"from": 118000,
+				"to": 120480
+			},
+			"text": " But honestly, that's pretty much where the similarities end"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:00,560",
+				"to": "00:02:07,440"
+			},
+			"offsets": {
+				"from": 120560,
+				"to": 127440
+			},
+			"text": " You've got cloud firestore and you've got the real-time database the choice you make right here is going to dictate your app scalability"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:07,440",
+				"to": "00:02:10,160"
+			},
+			"offsets": {
+				"from": 127440,
+				"to": 130160
+			},
+			"text": " It's data structure and ultimately your server costs"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:10,960",
+				"to": "00:02:16,280"
+			},
+			"offsets": {
+				"from": 130960,
+				"to": 136280
+			},
+			"text": " Let's set up the heavyweight match up in section three firestore versus real-time database"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:16,680",
+				"to": "00:02:18,760"
+			},
+			"offsets": {
+				"from": 136680,
+				"to": 138760
+			},
+			"text": " Which one is actually right for you?"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:19,280",
+				"to": "00:02:25,360"
+			},
+			"offsets": {
+				"from": 139280,
+				"to": 145360
+			},
+			"text": " Well, the fundamental difference lies in how they structure data think of the real-time database as a giant family tree"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:25,360",
+				"to": "00:02:31,240"
+			},
+			"offsets": {
+				"from": 145360,
+				"to": 151240
+			},
+			"text": " Or actually as one firebase engineer famously put it. It's a giant Jason tree where lawlessness rules the land"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:31,800",
+				"to": "00:02:36,600"
+			},
+			"offsets": {
+				"from": 151800,
+				"to": 156600
+			},
+			"text": " Simple data is super easy to store but complex hierarchical data that gets messy fast"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:37,040",
+				"to": "00:02:44,640"
+			},
+			"offsets": {
+				"from": 157040,
+				"to": 164640
+			},
+			"text": " Cloud Firestore on the other hand is highly structured it uses a document model think of it like a meticulously organized filing cabinet"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:44,640",
+				"to": "00:02:48,920"
+			},
+			"offsets": {
+				"from": 164640,
+				"to": 168920
+			},
+			"text": " You have collections which hold documents and those documents can contain sub collections"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:48,920",
+				"to": "00:02:55,320"
+			},
+			"offsets": {
+				"from": 168920,
+				"to": 175320
+			},
+			"text": " It just lets you organize complex data in a way that logically makes sense and this brilliantly illustrates"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:55,320",
+				"to": "00:03:01,480"
+			},
+			"offsets": {
+				"from": 175320,
+				"to": 181480
+			},
+			"text": " Why structuring matters so much when you actually go to retrieve your data in firestore queries are shallow"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:01,480",
+				"to": "00:03:05,120"
+			},
+			"offsets": {
+				"from": 181480,
+				"to": 185120
+			},
+			"text": " If you want a document from your filing cabinet, you just grab that one document"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:05,120",
+				"to": "00:03:10,600"
+			},
+			"offsets": {
+				"from": 185120,
+				"to": 190600
+			},
+			"text": " You don't have to download all the data inside its sub collections. That saves you massive amounts of bandwidth"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:11,120",
+				"to": "00:03:18,040"
+			},
+			"offsets": {
+				"from": 191120,
+				"to": 198040
+			},
+			"text": " Plus firestore queries are indexed by default. So performance is based on the size of your results set not the size of your entire database"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:18,560",
+				"to": "00:03:21,960"
+			},
+			"offsets": {
+				"from": 198560,
+				"to": 201960
+			},
+			"text": " Now the real-time database its queries are deep by default"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:21,960",
+				"to": "00:03:24,680"
+			},
+			"offsets": {
+				"from": 201960,
+				"to": 204680
+			},
+			"text": " If you query a node in that giant Jason tree"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:24,680",
+				"to": "00:03:31,760"
+			},
+			"offsets": {
+				"from": 204680,
+				"to": 211760
+			},
+			"text": " You are pulling down the entire sub tree and as your data set grows if you're not super careful query performance can significantly degrade"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:32,160",
+				"to": "00:03:36,600"
+			},
+			"offsets": {
+				"from": 212160,
+				"to": 216600
+			},
+			"text": " Then of course, there's the issue of scaling if your app goes viral overnight"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:36,600",
+				"to": "00:03:39,920"
+			},
+			"offsets": {
+				"from": 216600,
+				"to": 219920
+			},
+			"text": " You want a database that handles the spike without breaking a sweat, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:40,640",
+				"to": "00:03:47,360"
+			},
+			"offsets": {
+				"from": 220640,
+				"to": 227360
+			},
+			"text": " Firestore automatically scales up. It's built on Google cloud infrastructure and handles massive global growth completely on its own"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:47,680",
+				"to": "00:03:53,720"
+			},
+			"offsets": {
+				"from": 227680,
+				"to": 233720
+			},
+			"text": " The real-time database while incredibly fast actually tops out at about 200,000 concurrent connections per database"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:53,720",
+				"to": "00:03:58,720"
+			},
+			"offsets": {
+				"from": 233720,
+				"to": 238720
+			},
+			"text": " If you grow past that you have to manually split or shard your data across multiple databases"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:58,720",
+				"to": "00:04:05,520"
+			},
+			"offsets": {
+				"from": 238720,
+				"to": 245520
+			},
+			"text": " And let me tell you that is a huge engineering headache. You probably want to avoid and we definitely have to talk about the financial impact"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:05,600",
+				"to": "00:04:10,960"
+			},
+			"offsets": {
+				"from": 245600,
+				"to": 250960
+			},
+			"text": " The pricing models are totally different here. Firestore basically charges you based on the number of operations"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:10,960",
+				"to": "00:04:17,260"
+			},
+			"offsets": {
+				"from": 250960,
+				"to": 257260
+			},
+			"text": " Your reads your rights your deletes the real-time database charges you primarily based on bandwidth and storage space"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:17,520",
+				"to": "00:04:23,520"
+			},
+			"offsets": {
+				"from": 257520,
+				"to": 263520
+			},
+			"text": " Let's make this practical if you're building a news app or maybe a dating app where a user occasionally fetches chunks of data"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:23,520",
+				"to": "00:04:26,600"
+			},
+			"offsets": {
+				"from": 263520,
+				"to": 266600
+			},
+			"text": " But doesn't write a ton fire stores pricing is fantastic"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:26,840",
+				"to": "00:04:34,840"
+			},
+			"offsets": {
+				"from": 266840,
+				"to": 274840
+			},
+			"text": " But if you're building a highly active group whiteboarding app where everyone is drawing and broadcasting dozens of tiny little updates per second to everybody else"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:35,440",
+				"to": "00:04:42,400"
+			},
+			"offsets": {
+				"from": 275440,
+				"to": 282400
+			},
+			"text": " Firestore would be ridiculously expensive for that kind of high-frequency state-syncing the real-time database is absolutely your best friend"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:42,760",
+				"to": "00:04:50,080"
+			},
+			"offsets": {
+				"from": 282760,
+				"to": 290080
+			},
+			"text": " So the crucial point really comes down to these hard numbers cloud Firestore offers an incredible enterprise grade multi-region uptime SLA of"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:50,720",
+				"to": "00:04:55,560"
+			},
+			"offsets": {
+				"from": 290720,
+				"to": 295560
+			},
+			"text": " 99.999% and it can handle up to one million concurrence things per database"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:55,640",
+				"to": "00:05:01,880"
+			},
+			"offsets": {
+				"from": 295640,
+				"to": 301880
+			},
+			"text": " The real-time database offers 99.95% uptime and like we said maxes out at 200,000 concurrence"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:02,160",
+				"to": "00:05:10,160"
+			},
+			"offsets": {
+				"from": 302160,
+				"to": 310160
+			},
+			"text": " Generally speaking firebase recommends that new applications start with cloud Firestore unless you have that very specific need for heavy tiny rapid fire updates"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:10,760",
+				"to": "00:05:15,000"
+			},
+			"offsets": {
+				"from": 310760,
+				"to": 315000
+			},
+			"text": " Okay, let's pivot to section four engaging users with messaging"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:15,120",
+				"to": "00:05:20,440"
+			},
+			"offsets": {
+				"from": 315120,
+				"to": 320440
+			},
+			"text": " We've talked a lot about storing data in the cloud, but a modern app architecture isn't just about passive storage"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:20,440",
+				"to": "00:05:24,280"
+			},
+			"offsets": {
+				"from": 320440,
+				"to": 324280
+			},
+			"text": " It's about actively pushing data out to keep users coming back and"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:24,880",
+				"to": "00:05:28,160"
+			},
+			"offsets": {
+				"from": 324880,
+				"to": 328160
+			},
+			"text": " That brings us to Firebase cloud messaging or FCM"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:28,720",
+				"to": "00:05:32,060"
+			},
+			"offsets": {
+				"from": 328720,
+				"to": 332060
+			},
+			"text": " FCM is a totally free cross-platform messaging service"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:32,160",
+				"to": "00:05:35,880"
+			},
+			"offsets": {
+				"from": 332160,
+				"to": 335880
+			},
+			"text": " This is your engagement engine whether your user is on iOS"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:36,260",
+				"to": "00:05:43,920"
+			},
+			"offsets": {
+				"from": 336260,
+				"to": 343920
+			},
+			"text": " Android or the web FCM is essential for delivering timely alerts chat messages or system updates even when the user has your app closed"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:44,600",
+				"to": "00:05:50,100"
+			},
+			"offsets": {
+				"from": 344600,
+				"to": 350100
+			},
+			"text": " Without this your app is basically just sitting there waiting for the user to remember to open it with FCM"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:50,160",
+				"to": "00:05:56,640"
+			},
+			"offsets": {
+				"from": 350160,
+				"to": 356640
+			},
+			"text": " You reach out to them just listen to the sheer scale of the Google infrastructure that is backing your push notifications"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:57,160",
+				"to": "00:06:03,040"
+			},
+			"offsets": {
+				"from": 357160,
+				"to": 363040
+			},
+			"text": " FCM can scale to over a hundred and fifteen billion notifications to more than four hundred million users globally"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:03,040",
+				"to": "00:06:08,600"
+			},
+			"offsets": {
+				"from": 363040,
+				"to": 368600
+			},
+			"text": " I mean that is enterprise grade reliability available to you right out of the box completely for free"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:08,800",
+				"to": "00:06:13,640"
+			},
+			"offsets": {
+				"from": 368800,
+				"to": 373640
+			},
+			"text": " You don't have to build some complex routing system to figure out which device token belongs to which user"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:14,000",
+				"to": "00:06:16,920"
+			},
+			"offsets": {
+				"from": 374000,
+				"to": 376920
+			},
+			"text": " Firebase just handles the heavy lifting for you now"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:16,920",
+				"to": "00:06:24,220"
+			},
+			"offsets": {
+				"from": 376920,
+				"to": 384220
+			},
+			"text": " What's really wild about that volume is that during peak times the Firebase cloud messaging infrastructure has effortlessly handled up to"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:24,760",
+				"to": "00:06:26,920"
+			},
+			"offsets": {
+				"from": 384760,
+				"to": 386920
+			},
+			"text": " 46 million queries per second"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:27,400",
+				"to": "00:06:35,400"
+			},
+			"offsets": {
+				"from": 387400,
+				"to": 395400
+			},
+			"text": " 46 million that means no matter how big your user base gets or how sudden a traffic spike you get hit with your notifications are going to be delivered reliably and"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:35,720",
+				"to": "00:06:43,640"
+			},
+			"offsets": {
+				"from": 395720,
+				"to": 403640
+			},
+			"text": " Instantly let's move to section 5 and see how this builds into the grand finale the complete mobile architecture"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:44,120",
+				"to": "00:06:48,180"
+			},
+			"offsets": {
+				"from": 404120,
+				"to": 408180
+			},
+			"text": " Let's connect the database and messaging tools into a unified system"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:48,520",
+				"to": "00:06:53,720"
+			},
+			"offsets": {
+				"from": 408520,
+				"to": 413720
+			},
+			"text": " Because the real magic of Firebase doesn't just lie and having a good database or a good messaging system"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:53,720",
+				"to": "00:06:58,400"
+			},
+			"offsets": {
+				"from": 413720,
+				"to": 418400
+			},
+			"text": " The magic is the interconnected ecosystem. It's an event driven world"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:58,940",
+				"to": "00:07:02,280"
+			},
+			"offsets": {
+				"from": 418940,
+				"to": 422280
+			},
+			"text": " Everything happens securely without you ever managing a server"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:02,360",
+				"to": "00:07:07,960"
+			},
+			"offsets": {
+				"from": 422360,
+				"to": 427960
+			},
+			"text": " You can write custom back-end code using cloud functions that just sit there waiting for something to happen"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:07,960",
+				"to": "00:07:12,820"
+			},
+			"offsets": {
+				"from": 427960,
+				"to": 432820
+			},
+			"text": " Like a database update or a new user signing up and then they automatically trigger a workflow"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:13,240",
+				"to": "00:07:17,760"
+			},
+			"offsets": {
+				"from": 433240,
+				"to": 437760
+			},
+			"text": " Let's walk through the exact life cycle of how this event-driven architecture works in reality"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:18,200",
+				"to": "00:07:23,480"
+			},
+			"offsets": {
+				"from": 438200,
+				"to": 443480
+			},
+			"text": " Imagine a user sends a chat message step one your app performs a simple database right to Firestore"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:23,920",
+				"to": "00:07:28,000"
+			},
+			"offsets": {
+				"from": 443920,
+				"to": 448000
+			},
+			"text": " Step two the exact moment that data hits the database a cloud function"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:28,000",
+				"to": "00:07:33,120"
+			},
+			"offsets": {
+				"from": 448000,
+				"to": 453120
+			},
+			"text": " Which remember is just a tiny piece of serverless code you wrote is automatically triggered step three"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:33,120",
+				"to": "00:07:37,080"
+			},
+			"offsets": {
+				"from": 453120,
+				"to": 457080
+			},
+			"text": " This function grabs the message and instantly sends a payload to Firebase cloud messaging"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:37,440",
+				"to": "00:07:43,560"
+			},
+			"offsets": {
+				"from": 457440,
+				"to": 463560
+			},
+			"text": " Step four FCM routes it through its massive global network and the recipient gets a push notification right on their screen"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:43,560",
+				"to": "00:07:49,760"
+			},
+			"offsets": {
+				"from": 463560,
+				"to": 469760
+			},
+			"text": " All of this happens in milliseconds. No service to maintain. No constant pulling of the database to check for new messages"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:49,760",
+				"to": "00:07:55,360"
+			},
+			"offsets": {
+				"from": 469760,
+				"to": 475360
+			},
+			"text": " Just a seamless beautiful event driven architecture and that brings us to the ultimate question"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:55,360",
+				"to": "00:07:59,040"
+			},
+			"offsets": {
+				"from": 475360,
+				"to": 479040
+			},
+			"text": " You now understand the sheer power of the serverless mobile back end"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:59,040",
+				"to": "00:08:05,200"
+			},
+			"offsets": {
+				"from": 479040,
+				"to": 485200
+			},
+			"text": " You know exactly how to choose between the structured scale of Firestore and the rapid fire speed of the real-time database"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:05,440",
+				"to": "00:08:12,600"
+			},
+			"offsets": {
+				"from": 485440,
+				"to": 492600
+			},
+			"text": " You've seen how Firebase cloud messaging can reliably reach billions of devices and how an event-driven architecture ties everything together effortlessly"
+		},
+		{
+			"timestamps": {
+				"from": "00:08:12,840",
+				"to": "00:08:19,160"
+			},
+			"offsets": {
+				"from": 492840,
+				"to": 499160
+			},
+			"text": " You have the tools you have the knowledge the infrastructure is sitting right there waiting. So what will you build next?"
+		}
+	]
+}
