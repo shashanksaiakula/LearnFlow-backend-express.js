@@ -116,7 +116,7 @@ const changePassword = async (req, res) => {
     const response = await authService.changePassword(oldPassword, newPassword, userId)
 
     if (response === "Password not matching") {
-        return res.status(401).json({
+        return res.status(403).json({
             success: false,
             message: "entered inscorrect Password"
         })
@@ -288,6 +288,16 @@ async function resendVerifyEmail(req, res) {
 
 }
 
+async function refreshToken(req, res) {
+
+    const { refreshToken } = req.body;
+
+    const result =
+        await authService.refreshAccessToken(refreshToken);
+
+    return res.status(result.statusCode).json(result);
+}
+
 
 module.exports = {
     getProfile,
@@ -299,5 +309,6 @@ module.exports = {
     forgotPassword,
     resetPassword,
     verifyEmail,
-    resendVerifyEmail
+    resendVerifyEmail,
+    refreshToken
 };

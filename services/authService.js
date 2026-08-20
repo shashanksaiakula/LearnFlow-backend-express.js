@@ -5,6 +5,7 @@ const crypto = require("crypto");
 const emailService = require("./emailService");
 
 const SECRET_KEY = process.env.SECRET_KEY;
+const REFRESH_SECRET_KEY = process.env.REFRESH_SECRET_KEY;
 
 async function login(body) {
 
@@ -45,22 +46,32 @@ async function login(body) {
     }
 
     // Generate JWT
-    const token = jwt.sign(
+    const accessToken = jwt.sign(
         {
             userId: user._id,
             email: user.email
         },
         SECRET_KEY,
         {
-            expiresIn: "1h"
+            expiresIn: "15m"
         }
     );
+
+    const refreshToken = jwt.sign(
+        { userId: user._id },
+        process.env.REFRESH_SECRET_KEY,
+        { expiresIn: "7d" }
+    )
+    user.refreshToken = refreshToken
+
+    await user.save()
 
     return {
         statusCode: 200,
         success: true,
         message: "Login successful",
-        token
+        accessToken,
+        refreshToken
     };
 }
 
@@ -230,6 +241,68 @@ async function resendVerifyEmail(email) {
     return user
 }
 
+async function refreshAccessToken(refreshToken) {
+
+    if (!refreshToken) {
+        return {
+            statusCode: 401,
+            success: false,
+            message: "Refresh token is required"
+        };
+    }
+
+    try {
+
+        const payload = jwt.verify(
+            refreshToken,
+            process.env.REFRESH_SECRET_KEY
+        );
+
+        const user = await User.findById(payload.userId);
+
+        if (!user || user.refreshToken !== refreshToken) {
+            return {
+                statusCode: 401,
+                success: false,
+                message: "Invalid refresh token"
+            };
+        }
+
+        const accessToken = jwt.sign(
+            {
+                userId: user._id,
+                email: user.email
+            },
+            SECRET_KEY,
+            {
+                expiresIn: "15m"
+            }
+        );
+        // const refreshToken = jwt.sign(
+        //     { userId: user._id },
+        //     process.env.REFRESH_SECRET_KEY,
+        //     { expiresIn: "7d" }
+        // )
+        // user.refreshToken = refreshToken
+
+        // await user.save()
+
+        return {
+            statusCode: 200,
+            success: true,
+            message: "Access token refreshed",
+            accessToken
+        };
+
+    } catch (error) {
+
+        return {
+            statusCode: 401,
+            success: false,
+            message: "Invalid or expired refresh token"
+        };
+    }
+}
 
 
 module.exports = {
@@ -240,5 +313,6 @@ module.exports = {
     forgotPassword,
     resetPassword,
     verifyEmail,
-    resendVerifyEmail
+    resendVerifyEmail,
+    refreshAccessToken
 };

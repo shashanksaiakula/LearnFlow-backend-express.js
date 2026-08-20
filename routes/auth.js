@@ -14,5 +14,6 @@ router.post("/forgotPassword", authController.forgotPassword);
 router.post("/resetPassword", authController.resetPassword);
 router.post("/verifyEmail", authController.verifyEmail);
 router.post("/resendVerifyEmailToken", authController.resendVerifyEmail);
+router.post("/refreshToken", authController.refreshToken);
 
 module.exports = router
