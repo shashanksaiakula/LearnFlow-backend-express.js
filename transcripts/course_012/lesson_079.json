@@ -1,0 +1,1495 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "F:\\LLM\\models\\ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:04,480"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 4480
+			},
+			"text": " So, how many hours would you say you've lost to the dreaded phrase, \"Well, it works"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:04,480",
+				"to": "00:00:05,480"
+			},
+			"offsets": {
+				"from": 4480,
+				"to": 5480
+			},
+			"text": " on my machine.\""
+		},
+		{
+			"timestamps": {
+				"from": "00:00:05,480",
+				"to": "00:00:07,480"
+			},
+			"offsets": {
+				"from": 5480,
+				"to": 7480
+			},
+			"text": " We've absolutely all been there."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:07,480",
+				"to": "00:00:11,960"
+			},
+			"offsets": {
+				"from": 7480,
+				"to": 11960
+			},
+			"text": " You clone a repository, you run an install command, and boom, your terminal immediately"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:11,960",
+				"to": "00:00:14,080"
+			},
+			"offsets": {
+				"from": 11960,
+				"to": 14080
+			},
+			"text": " explodes with 50 lines of red text."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:14,080",
+				"to": "00:00:17,480"
+			},
+			"offsets": {
+				"from": 14080,
+				"to": 17480
+			},
+			"text": " Then you spend the next three hours wrestling with mismatched versions, conflicting global"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:17,480",
+				"to": "00:00:21,680"
+			},
+			"offsets": {
+				"from": 17480,
+				"to": 21680
+			},
+			"text": " packages, and weird operating system quirks instead of actually, you know, writing code."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:21,680",
+				"to": "00:00:24,560"
+			},
+			"offsets": {
+				"from": 21680,
+				"to": 24560
+			},
+			"text": " It's a completely universal developer frustration."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:24,560",
+				"to": "00:00:27,200"
+			},
+			"offsets": {
+				"from": 24560,
+				"to": 27200
+			},
+			"text": " But what if we could engineer that problem completely out of existence?"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:27,200",
+				"to": "00:00:33,560"
+			},
+			"offsets": {
+				"from": 27200,
+				"to": 33560
+			},
+			"text": " Welcome to the explainer, today our goal is highly specific and honestly incredibly practical."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:33,560",
+				"to": "00:00:37,820"
+			},
+			"offsets": {
+				"from": 33560,
+				"to": 37820
+			},
+			"text": " We're building a cohesive, conflict-free Node.js development environment."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:37,820",
+				"to": "00:00:41,420"
+			},
+			"offsets": {
+				"from": 37820,
+				"to": 41420
+			},
+			"text": " We're going to look at the absolute best practices drawn straight from Microsoft's official"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:41,420",
+				"to": "00:00:46,240"
+			},
+			"offsets": {
+				"from": 41420,
+				"to": 46240
+			},
+			"text": " documentation, Docker's engineering blog, and top-tier TypeScript experts to construct"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:46,240",
+				"to": "00:00:48,920"
+			},
+			"offsets": {
+				"from": 46240,
+				"to": 48920
+			},
+			"text": " a setup that is essentially bulletproof."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:48,920",
+				"to": "00:00:53,080"
+			},
+			"offsets": {
+				"from": 48920,
+				"to": 53080
+			},
+			"text": " We are finally moving past the messy global installs of the past and stepping right into"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:53,080",
+				"to": "00:00:54,920"
+			},
+			"offsets": {
+				"from": 53080,
+				"to": 54920
+			},
+			"text": " the modern standard."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:54,920",
+				"to": "00:00:59,560"
+			},
+			"offsets": {
+				"from": 54920,
+				"to": 59560
+			},
+			"text": " Here's our roadmap for today, we'll be building this environment layer by layer, one, setting"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:59,560",
+				"to": "00:01:05,440"
+			},
+			"offsets": {
+				"from": 59560,
+				"to": 65440
+			},
+			"text": " the Node Foundation, two, taming your package managers, three, automating clean code, and"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:05,440",
+				"to": "00:01:07,920"
+			},
+			"offsets": {
+				"from": 65440,
+				"to": 67920
+			},
+			"text": " four, containerizing local development."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:07,920",
+				"to": "00:01:13,320"
+			},
+			"offsets": {
+				"from": 67920,
+				"to": 73320
+			},
+			"text": " All right, let's jump right into part one, setting the Node Foundation."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:13,320",
+				"to": "00:01:15,920"
+			},
+			"offsets": {
+				"from": 73320,
+				"to": 75920
+			},
+			"text": " We've got to get the operating system layer right first."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:15,920",
+				"to": "00:01:20,320"
+			},
+			"offsets": {
+				"from": 75920,
+				"to": 80320
+			},
+			"text": " Look, if you're rocking a Mac or a standard Linux distro, you're pretty much good to go"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:20,320",
+				"to": "00:01:21,320"
+			},
+			"offsets": {
+				"from": 80320,
+				"to": 81320
+			},
+			"text": " here."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:21,320",
+				"to": "00:01:25,160"
+			},
+			"offsets": {
+				"from": 81320,
+				"to": 85160
+			},
+			"text": " In Windows users, we've got a major architectural decision right out of the gate."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:25,160",
+				"to": "00:01:29,920"
+			},
+			"offsets": {
+				"from": 85160,
+				"to": 89920
+			},
+			"text": " As Microsoft's own documentation contrasts, you can definitely use native Windows, which"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:29,920",
+				"to": "00:01:33,840"
+			},
+			"offsets": {
+				"from": 89920,
+				"to": 93840
+			},
+			"text": " is simple for beginners, maybe utilizing a package manager like chocolate tea."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:33,840",
+				"to": "00:01:38,480"
+			},
+			"offsets": {
+				"from": 93840,
+				"to": 98480
+			},
+			"text": " But for professionals, the recommendation shifts heavily to WSL2, the Windows subsystem"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:38,480",
+				"to": "00:01:39,480"
+			},
+			"offsets": {
+				"from": 98480,
+				"to": 99480
+			},
+			"text": " for Linux."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:39,480",
+				"to": "00:01:40,480"
+			},
+			"offsets": {
+				"from": 99480,
+				"to": 100480
+			},
+			"text": " Why?"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:40,480",
+				"to": "00:01:42,960"
+			},
+			"offsets": {
+				"from": 100480,
+				"to": 102960
+			},
+			"text": " It's all about crucial production server parity."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:42,960",
+				"to": "00:01:46,920"
+			},
+			"offsets": {
+				"from": 102960,
+				"to": 106920
+			},
+			"text": " If you're planning to deploy your Node app to a Linux server, you really want your development"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:46,920",
+				"to": "00:01:50,000"
+			},
+			"offsets": {
+				"from": 106920,
+				"to": 110000
+			},
+			"text": " environment to mimic that exact Linux architecture."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:50,000",
+				"to": "00:01:53,160"
+			},
+			"offsets": {
+				"from": 110000,
+				"to": 113160
+			},
+			"text": " And this is where modern tooling is just incredible at bridging the gap."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:53,160",
+				"to": "00:01:58,400"
+			},
+			"offsets": {
+				"from": 113160,
+				"to": 118400
+			},
+			"text": " By installing WSL2, which actually defaults to Ubuntu, you're getting a real Linux kernel."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:58,400",
+				"to": "00:02:01,420"
+			},
+			"offsets": {
+				"from": 118400,
+				"to": 121420
+			},
+			"text": " You can then use Windows Terminal to seamlessly manage your shells."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:01,420",
+				"to": "00:02:06,420"
+			},
+			"offsets": {
+				"from": 121420,
+				"to": 126420
+			},
+			"text": " But the real magic here is that third point, VS code with the remote WSL extension."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:06,420",
+				"to": "00:02:09,840"
+			},
+			"offsets": {
+				"from": 126420,
+				"to": 129840
+			},
+			"text": " This actually splits your editor into a client server architecture."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:09,840",
+				"to": "00:02:13,840"
+			},
+			"offsets": {
+				"from": 129840,
+				"to": 133840
+			},
+			"text": " The UI runs on Windows, but the code execution, the terminal, and the Node environment run"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:13,840",
+				"to": "00:02:15,760"
+			},
+			"offsets": {
+				"from": 133840,
+				"to": 135760
+			},
+			"text": " entirely in Linux."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:15,760",
+				"to": "00:02:19,960"
+			},
+			"offsets": {
+				"from": 135760,
+				"to": 139960
+			},
+			"text": " Just remember, keep your project files inside the Linux file system for maximum performance,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:19,960",
+				"to": "00:02:21,440"
+			},
+			"offsets": {
+				"from": 139960,
+				"to": 141440
+			},
+			"text": " not on your C drive."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:21,440",
+				"to": "00:02:26,560"
+			},
+			"offsets": {
+				"from": 141440,
+				"to": 146560
+			},
+			"text": " Okay, moving right along to part two, taming your package managers."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:26,560",
+				"to": "00:02:30,240"
+			},
+			"offsets": {
+				"from": 146560,
+				"to": 150240
+			},
+			"text": " Let's make sure we have zero version conflicts."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:30,240",
+				"to": "00:02:31,440"
+			},
+			"offsets": {
+				"from": 150240,
+				"to": 151440
+			},
+			"text": " You know how it goes."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:31,440",
+				"to": "00:02:34,600"
+			},
+			"offsets": {
+				"from": 151440,
+				"to": 154600
+			},
+			"text": " Historically, developers just installed Node globally."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:34,600",
+				"to": "00:02:40,080"
+			},
+			"offsets": {
+				"from": 154600,
+				"to": 160080
+			},
+			"text": " But what happens when Project A needs Node 18 and Project B is stuck on Node 14?"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:40,080",
+				"to": "00:02:42,800"
+			},
+			"offsets": {
+				"from": 160080,
+				"to": 162800
+			},
+			"text": " Enter Fast Node Manager, or F&M."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:42,800",
+				"to": "00:02:46,040"
+			},
+			"offsets": {
+				"from": 162800,
+				"to": 166040
+			},
+			"text": " Because it's built in Rust, it's incredibly fast and fully cross-platform."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:46,040",
+				"to": "00:02:50,240"
+			},
+			"offsets": {
+				"from": 166040,
+				"to": 170240
+			},
+			"text": " It completely replaces the need for older tools, letting you install and swap between"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:50,240",
+				"to": "00:02:53,280"
+			},
+			"offsets": {
+				"from": 170240,
+				"to": 173280
+			},
+			"text": " multiple Node versions practically instantly."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:53,280",
+				"to": "00:02:56,600"
+			},
+			"offsets": {
+				"from": 173280,
+				"to": 176600
+			},
+			"text": " But honestly, who wants to switch versions manually every time?"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:56,600",
+				"to": "00:02:58,180"
+			},
+			"offsets": {
+				"from": 176600,
+				"to": 178180
+			},
+			"text": " We want to automate that."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:58,180",
+				"to": "00:03:02,840"
+			},
+			"offsets": {
+				"from": 178180,
+				"to": 182840
+			},
+			"text": " By simply creating a .mode version file in your project's root folder, you declare exactly"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:02,840",
+				"to": "00:03:05,440"
+			},
+			"offsets": {
+				"from": 182840,
+				"to": 185440
+			},
+			"text": " what version that specific project needs."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:05,440",
+				"to": "00:03:09,680"
+			},
+			"offsets": {
+				"from": 185440,
+				"to": 189680
+			},
+			"text": " Then you add the use on CD flag to your shell configuration, and your terminal does all the"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:09,680",
+				"to": "00:03:10,840"
+			},
+			"offsets": {
+				"from": 189680,
+				"to": 190840
+			},
+			"text": " heavy lifting."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:10,840",
+				"to": "00:03:15,320"
+			},
+			"offsets": {
+				"from": 190840,
+				"to": 195320
+			},
+			"text": " The exact moment you change directories into that project folder, F&M reads the file and"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:15,320",
+				"to": "00:03:18,020"
+			},
+			"offsets": {
+				"from": 195320,
+				"to": 198020
+			},
+			"text": " automatically switches you to the correct Node version."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:18,020",
+				"to": "00:03:20,120"
+			},
+			"offsets": {
+				"from": 198020,
+				"to": 200120
+			},
+			"text": " It's a beautiful, seamless experience."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:20,120",
+				"to": "00:03:23,160"
+			},
+			"offsets": {
+				"from": 200120,
+				"to": 203160
+			},
+			"text": " All right, so we've solved the Node version problem."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:23,160",
+				"to": "00:03:25,680"
+			},
+			"offsets": {
+				"from": 203160,
+				"to": 205680
+			},
+			"text": " But what about the package manager itself?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:25,680",
+				"to": "00:03:30,940"
+			},
+			"offsets": {
+				"from": 205680,
+				"to": 210940
+			},
+			"text": " Team member A uses NPM, B uses Yarn, and C uses PMPM."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:30,940",
+				"to": "00:03:32,080"
+			},
+			"offsets": {
+				"from": 210940,
+				"to": 212080
+			},
+			"text": " What a mess."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:32,080",
+				"to": "00:03:33,200"
+			},
+			"offsets": {
+				"from": 212080,
+				"to": 213200
+			},
+			"text": " Enter Corepack."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:33,200",
+				"to": "00:03:38,640"
+			},
+			"offsets": {
+				"from": 213200,
+				"to": 218640
+			},
+			"text": " This is bundled directly within Node.js since version 14.19, and it acts as a manager for"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:38,640",
+				"to": "00:03:40,280"
+			},
+			"offsets": {
+				"from": 218640,
+				"to": 220280
+			},
+			"text": " your package managers."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:40,280",
+				"to": "00:03:44,360"
+			},
+			"offsets": {
+				"from": 220280,
+				"to": 224360
+			},
+			"text": " You just enable it globally with a quick, Corepack-enable command."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:44,360",
+				"to": "00:03:47,480"
+			},
+			"offsets": {
+				"from": 224360,
+				"to": 227480
+			},
+			"text": " TypeScript expert Matt Pokock hit the nail on the head here."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:47,480",
+				"to": "00:03:52,280"
+			},
+			"offsets": {
+				"from": 227480,
+				"to": 232280
+			},
+			"text": " Once Corepack is enabled, you add a package manager field to your package.json file."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:52,280",
+				"to": "00:03:54,600"
+			},
+			"offsets": {
+				"from": 232280,
+				"to": 234600
+			},
+			"text": " But here's the absolute critical rule."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:54,600",
+				"to": "00:03:59,520"
+			},
+			"offsets": {
+				"from": 234600,
+				"to": 239520
+			},
+			"text": " You have to specify an exact version of the package manager, not a range, no carrots,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:59,520",
+				"to": "00:04:00,840"
+			},
+			"offsets": {
+				"from": 239520,
+				"to": 240840
+			},
+			"text": " no latest tags."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:00,840",
+				"to": "00:04:05,200"
+			},
+			"offsets": {
+				"from": 240840,
+				"to": 245200
+			},
+			"text": " By doing this, if a developer accidentally types NPM install in a project that's configured"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:05,200",
+				"to": "00:04:10,160"
+			},
+			"offsets": {
+				"from": 245200,
+				"to": 250160
+			},
+			"text": " for PNPM, Corepack literally intercepts the command, throws an error, and physically prevents"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:10,160",
+				"to": "00:04:11,880"
+			},
+			"offsets": {
+				"from": 250160,
+				"to": 251880
+			},
+			"text": " them from messing up the lock file."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:11,880",
+				"to": "00:04:15,600"
+			},
+			"offsets": {
+				"from": 251880,
+				"to": 255600
+			},
+			"text": " It completely eliminates package manager drift across your team."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:15,600",
+				"to": "00:04:18,920"
+			},
+			"offsets": {
+				"from": 255600,
+				"to": 258920
+			},
+			"text": " Which brings us to part three, automating clean code."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:18,920",
+				"to": "00:04:21,320"
+			},
+			"offsets": {
+				"from": 258920,
+				"to": 261320
+			},
+			"text": " Let's banish formatting debates forever."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:21,320",
+				"to": "00:04:29,320"
+			},
+			"offsets": {
+				"from": 261320,
+				"to": 269320
+			},
+			"text": " To pull this off, we have to draw a hard line between two distinct tools, prettier and ESLint."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:29,320",
+				"to": "00:04:33,680"
+			},
+			"offsets": {
+				"from": 269320,
+				"to": 273680
+			},
+			"text": " Critier is highly opinionated and it cares about one thing, formatting."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:33,680",
+				"to": "00:04:36,680"
+			},
+			"offsets": {
+				"from": 273680,
+				"to": 276680
+			},
+			"text": " We're talking spacing, line length, quote styles."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:36,680",
+				"to": "00:04:40,680"
+			},
+			"offsets": {
+				"from": 276680,
+				"to": 280680
+			},
+			"text": " ESLint, on the other hand, is all about code quality."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:40,680",
+				"to": "00:04:45,360"
+			},
+			"offsets": {
+				"from": 280680,
+				"to": 285360
+			},
+			"text": " It catches unused variables, suspicious patterns, and potential bugs."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:45,360",
+				"to": "00:04:49,920"
+			},
+			"offsets": {
+				"from": 285360,
+				"to": 289920
+			},
+			"text": " Historically, getting these two to actually play nice together was a total nightmare."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:49,920",
+				"to": "00:04:55,760"
+			},
+			"offsets": {
+				"from": 289920,
+				"to": 295760
+			},
+			"text": " So here's the real game changer, the modern ESLint flat config, which was introduced in"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:55,760",
+				"to": "00:04:57,520"
+			},
+			"offsets": {
+				"from": 295760,
+				"to": 297520
+			},
+			"text": " ESLint 9."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:57,520",
+				"to": "00:05:06,400"
+			},
+			"offsets": {
+				"from": 297520,
+				"to": 306400
+			},
+			"text": " You use a file like ESLint.config.mjs and install a specific package called ESLint config-predier."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:06,400",
+				"to": "00:05:11,280"
+			},
+			"offsets": {
+				"from": 306400,
+				"to": 311280
+			},
+			"text": " What this brilliantly does is disable every single ESLint rule that has anything to do"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:11,280",
+				"to": "00:05:12,440"
+			},
+			"offsets": {
+				"from": 311280,
+				"to": 312440
+			},
+			"text": " with formatting."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:12,440",
+				"to": "00:05:15,440"
+			},
+			"offsets": {
+				"from": 312440,
+				"to": 315440
+			},
+			"text": " It completely neutralizes the conflict."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:15,440",
+				"to": "00:05:20,080"
+			},
+			"offsets": {
+				"from": 315440,
+				"to": 320080
+			},
+			"text": " ESLint handles the logic bugs, prettier handles the look, and they literally never fight over"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:20,080",
+				"to": "00:05:22,000"
+			},
+			"offsets": {
+				"from": 320080,
+				"to": 322000
+			},
+			"text": " a semicolon again."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:22,000",
+				"to": "00:05:25,600"
+			},
+			"offsets": {
+				"from": 322000,
+				"to": 325600
+			},
+			"text": " Of course, a rule doesn't mean much if you don't enforce it, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:25,600",
+				"to": "00:05:28,520"
+			},
+			"offsets": {
+				"from": 325600,
+				"to": 328520
+			},
+			"text": " We enforce this using husky and lint staged."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:28,520",
+				"to": "00:05:33,440"
+			},
+			"offsets": {
+				"from": 328520,
+				"to": 333440
+			},
+			"text": " By setting up pre-commit hooks, every single time a developer types git commit, husky intercepts"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:33,440",
+				"to": "00:05:38,960"
+			},
+			"offsets": {
+				"from": 333440,
+				"to": 338960
+			},
+			"text": " it, it runs prettier to format the code, runs ESLint to auto-fix minor issues, and checks"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:38,960",
+				"to": "00:05:43,480"
+			},
+			"offsets": {
+				"from": 338960,
+				"to": 343480
+			},
+			"text": " for major bugs, but only on the files that are currently staged for commit."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:43,480",
+				"to": "00:05:48,320"
+			},
+			"offsets": {
+				"from": 343480,
+				"to": 348320
+			},
+			"text": " It creates this amazing aha moment for teams where bad, unformatted code is physically"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:48,320",
+				"to": "00:05:51,160"
+			},
+			"offsets": {
+				"from": 348320,
+				"to": 351160
+			},
+			"text": " blocked from ever reaching the git repository."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:51,160",
+				"to": "00:05:55,720"
+			},
+			"offsets": {
+				"from": 351160,
+				"to": 355720
+			},
+			"text": " Alright final stretch, part four, containerizing local development."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:55,720",
+				"to": "00:05:58,080"
+			},
+			"offsets": {
+				"from": 355720,
+				"to": 358080
+			},
+			"text": " Let's create some identical environments."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:58,080",
+				"to": "00:06:02,520"
+			},
+			"offsets": {
+				"from": 358080,
+				"to": 362520
+			},
+			"text": " If we want a truly identical environment everywhere, we have to talk Docker networks."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:02,520",
+				"to": "00:06:07,760"
+			},
+			"offsets": {
+				"from": 362520,
+				"to": 367760
+			},
+			"text": " When you're developing locally, setting up a database like MongoDB manually is just tedious."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:07,760",
+				"to": "00:06:11,280"
+			},
+			"offsets": {
+				"from": 367760,
+				"to": 371280
+			},
+			"text": " Docker solves this using a user-defined bridge network."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:11,280",
+				"to": "00:06:14,120"
+			},
+			"offsets": {
+				"from": 371280,
+				"to": 374120
+			},
+			"text": " This provides an automatic DNS lookup service."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:14,120",
+				"to": "00:06:18,360"
+			},
+			"offsets": {
+				"from": 374120,
+				"to": 378360
+			},
+			"text": " So instead of messy local host port mapping and IP addresses, your node app can literally"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:18,360",
+				"to": "00:06:23,680"
+			},
+			"offsets": {
+				"from": 378360,
+				"to": 383680
+			},
+			"text": " just connect to a URL that says MongoDB/Mongo colon 27017."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:23,680",
+				"to": "00:06:26,260"
+			},
+			"offsets": {
+				"from": 383680,
+				"to": 386260
+			},
+			"text": " Docker just handles the routing internally for you."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:26,260",
+				"to": "00:06:30,040"
+			},
+			"offsets": {
+				"from": 386260,
+				"to": 390040
+			},
+			"text": " Now nobody wants to type out massive terminal commands to orchestrate all this."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:30,040",
+				"to": "00:06:35,760"
+			},
+			"offsets": {
+				"from": 390040,
+				"to": 395760
+			},
+			"text": " That's where a dedicated dev compose file comes in, something like Docker compose.dev.yaml."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:35,760",
+				"to": "00:06:41,240"
+			},
+			"offsets": {
+				"from": 395760,
+				"to": 401240
+			},
+			"text": " In this one single declarative file, we define our node service, our Mongo service, our volumes,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:41,240",
+				"to": "00:06:42,640"
+			},
+			"offsets": {
+				"from": 401240,
+				"to": 402640
+			},
+			"text": " and our networks."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:42,640",
+				"to": "00:06:45,720"
+			},
+			"offsets": {
+				"from": 402640,
+				"to": 405720
+			},
+			"text": " The payoff for doing this is absolutely massive."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:45,720",
+				"to": "00:06:51,440"
+			},
+			"offsets": {
+				"from": 405720,
+				"to": 411440
+			},
+			"text": " With one single command, Docker compose up, dash build, your entire stack springs to life."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:51,440",
+				"to": "00:06:55,600"
+			},
+			"offsets": {
+				"from": 411440,
+				"to": 415600
+			},
+			"text": " By mapping your local source code into the container using volumes, you can edit your"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:55,600",
+				"to": "00:07:00,640"
+			},
+			"offsets": {
+				"from": 415600,
+				"to": 420640
+			},
+			"text": " code in VS code on your host machine and nodemon inside the container instantly hot reloads"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:00,640",
+				"to": "00:07:01,640"
+			},
+			"offsets": {
+				"from": 420640,
+				"to": 421640
+			},
+			"text": " it."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:01,640",
+				"to": "00:07:02,760"
+			},
+			"offsets": {
+				"from": 421640,
+				"to": 422760
+			},
+			"text": " And check this out."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:02,760",
+				"to": "00:07:07,960"
+			},
+			"offsets": {
+				"from": 422760,
+				"to": 427960
+			},
+			"text": " By explicitly exposing port 9229 in that compose file, you can open Google Chrome, navigate"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:07,960",
+				"to": "00:07:12,640"
+			},
+			"offsets": {
+				"from": 427960,
+				"to": 432640
+			},
+			"text": " to a bout dash inspect and attach a native debugger directly to the node process running"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:12,640",
+				"to": "00:07:15,200"
+			},
+			"offsets": {
+				"from": 432640,
+				"to": 435200
+			},
+			"text": " inside your isolated Docker container."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:15,200",
+				"to": "00:07:19,600"
+			},
+			"offsets": {
+				"from": 435200,
+				"to": 439600
+			},
+			"text": " You get the safety of a container with the snappy developer experience of a native app."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:19,600",
+				"to": "00:07:23,160"
+			},
+			"offsets": {
+				"from": 439600,
+				"to": 443160
+			},
+			"text": " Well we've covered a ton of ground today in this explainer."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:23,160",
+				"to": "00:07:28,720"
+			},
+			"offsets": {
+				"from": 443160,
+				"to": 448720
+			},
+			"text": " We moved from the base OS layer with WSL2, locked down our versions with F&M and core"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:28,720",
+				"to": "00:07:34,800"
+			},
+			"offsets": {
+				"from": 448720,
+				"to": 454800
+			},
+			"text": " pack, automated our styling with the new ES lint flat config and husky, and finally wrapped"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:34,800",
+				"to": "00:07:38,720"
+			},
+			"offsets": {
+				"from": 454800,
+				"to": 458720
+			},
+			"text": " the whole shebang in a seamless Docker compose environment."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:38,720",
+				"to": "00:07:41,840"
+			},
+			"offsets": {
+				"from": 458720,
+				"to": 461840
+			},
+			"text": " So I want to leave you with this question to really think about."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:41,840",
+				"to": "00:07:44,040"
+			},
+			"offsets": {
+				"from": 461840,
+				"to": 464040
+			},
+			"text": " Look closely at your current local setup."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:44,040",
+				"to": "00:07:47,840"
+			},
+			"offsets": {
+				"from": 464040,
+				"to": 467840
+			},
+			"text": " Is your development environment actively helping you build better software?"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:47,840",
+				"to": "00:07:50,040"
+			},
+			"offsets": {
+				"from": 467840,
+				"to": 470040
+			},
+			"text": " Or is it secretly holding you back?"
+		},
+		{
+			"timestamps": {
+				"from": "00:07:50,040",
+				"to": "00:07:54,360"
+			},
+			"offsets": {
+				"from": 470040,
+				"to": 474360
+			},
+			"text": " Take an hour this week, audit your workflow and implement these modern standards."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:54,360",
+				"to": "00:07:57,520"
+			},
+			"offsets": {
+				"from": 474360,
+				"to": 477520
+			},
+			"text": " I promise you, it will pay dividends for years."
+		},
+		{
+			"timestamps": {
+				"from": "00:07:57,520",
+				"to": "00:07:58,080"
+			},
+			"offsets": {
+				"from": 477520,
+				"to": 478080
+			},
+			"text": " Happy coding."
+		}
+	]
+}
