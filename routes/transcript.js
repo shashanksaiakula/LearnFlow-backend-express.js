@@ -31,9 +31,13 @@ router.post("/transcript", async (req, res) => {
 
         console.error(error);
 
-        return res.status(500).json({
+        const isDependencyFailure = /ffmpeg|whisper|not found|unavailable/i.test(error.message || "");
+
+        return res.status(isDependencyFailure ? 503 : 500).json({
             success: false,
-            message: error.message
+            message: isDependencyFailure
+                ? "Transcript generation is unavailable on this server because the required FFmpeg/Whisper dependencies are missing or misconfigured."
+                : error.message
         });
 
     }

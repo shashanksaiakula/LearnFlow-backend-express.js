@@ -1,0 +1,1231 @@
+{
+	"systeminfo": "WHISPER : COREML = 0 | OPENVINO = 0 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "F:\\LLM\\models\\ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,900"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2900
+			},
+			"text": " Hey everyone, and welcome to this explainer."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:02,900",
+				"to": "00:00:09,100"
+			},
+			"offsets": {
+				"from": 2900,
+				"to": 9100
+			},
+			"text": " Today, we're diving straight into a massive crossroads that pretty much every mobile developer hits right out of the gate."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:09,100",
+				"to": "00:00:17,300"
+			},
+			"offsets": {
+				"from": 9100,
+				"to": 17300
+			},
+			"text": " We're talking about React Native, but more specifically, that huge foundational choice you have to make before you even write a single line of code."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:17,300",
+				"to": "00:00:25,700"
+			},
+			"offsets": {
+				"from": 17300,
+				"to": 25700
+			},
+			"text": " It's a decision that's going to dictate your whole development workflow, and honestly, getting it right from the start, it can save you literally hundreds of hours."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:25,700",
+				"to": "00:00:27,500"
+			},
+			"offsets": {
+				"from": 25700,
+				"to": 27500
+			},
+			"text": " Here's the game plan for today."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:27,500",
+				"to": "00:00:35,000"
+			},
+			"offsets": {
+				"from": 27500,
+				"to": 35000
+			},
+			"text": " We'll look at the two paths to React Native, check out the fast track with Expo, and then compare it to full control using the CLI."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:35,000",
+				"to": "00:00:41,000"
+			},
+			"offsets": {
+				"from": 35000,
+				"to": 41000
+			},
+			"text": " After that, we'll talk about the escape hatch, which is ejecting, and finally wrap up with choosing your workflow."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:41,000",
+				"to": "00:00:42,500"
+			},
+			"offsets": {
+				"from": 41000,
+				"to": 42500
+			},
+			"text": " Let's get right into it."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:42,500",
+				"to": "00:00:45,500"
+			},
+			"offsets": {
+				"from": 42500,
+				"to": 45500
+			},
+			"text": " Part 1. Two paths to React Native."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:45,500",
+				"to": "00:00:49,000"
+			},
+			"offsets": {
+				"from": 45500,
+				"to": 49000
+			},
+			"text": " This really is the foundational choice for every developer."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:49,000",
+				"to": "00:00:52,500"
+			},
+			"offsets": {
+				"from": 49000,
+				"to": 52500
+			},
+			"text": " So to really appreciate this, think about how things used to be."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:52,500",
+				"to": "00:00:58,000"
+			},
+			"offsets": {
+				"from": 52500,
+				"to": 58000
+			},
+			"text": " Traditionally, building a mobile app meant you had to learn completely different ecosystems for Apple and Android."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:58,000",
+				"to": "00:00:58,500"
+			},
+			"offsets": {
+				"from": 58000,
+				"to": 58500
+			},
+			"text": " Right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:58,500",
+				"to": "00:01:01,000"
+			},
+			"offsets": {
+				"from": 58500,
+				"to": 61000
+			},
+			"text": " But React Native totally flipped the script."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:01,000",
+				"to": "00:01:02,500"
+			},
+			"offsets": {
+				"from": 61000,
+				"to": 62500
+			},
+			"text": " It's almost like a magic bridge."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:02,500",
+				"to": "00:01:07,500"
+			},
+			"offsets": {
+				"from": 62500,
+				"to": 67500
+			},
+			"text": " You write your apps logic in JavaScript, just once, and boom, it runs on both platforms."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:07,500",
+				"to": "00:01:12,500"
+			},
+			"offsets": {
+				"from": 67500,
+				"to": 72500
+			},
+			"text": " Instead of juggling a Swift codebase for iOS and a totally separate Java one for Android,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:12,500",
+				"to": "00:01:17,000"
+			},
+			"offsets": {
+				"from": 72500,
+				"to": 77000
+			},
+			"text": " React Native gives you this one unified codebase with near-native performance."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:17,000",
+				"to": "00:01:19,500"
+			},
+			"offsets": {
+				"from": 77000,
+				"to": 79500
+			},
+			"text": " It is absolutely game-changing for efficiency."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:19,500",
+				"to": "00:01:25,500"
+			},
+			"offsets": {
+				"from": 79500,
+				"to": 85500
+			},
+			"text": " But to actually use that magic bridge, you're immediately faced with two very different paths."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:25,500",
+				"to": "00:01:29,500"
+			},
+			"offsets": {
+				"from": 85500,
+				"to": 89500
+			},
+			"text": " On one side, you've got Expo, which is known as the managed workflow."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:29,500",
+				"to": "00:01:32,500"
+			},
+			"offsets": {
+				"from": 89500,
+				"to": 92500
+			},
+			"text": " It essentially handles all the heavy lifting for you behind the scenes."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:32,500",
+				"to": "00:01:35,500"
+			},
+			"offsets": {
+				"from": 92500,
+				"to": 95500
+			},
+			"text": " On the other side, you have the React Native CLI."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:35,500",
+				"to": "00:01:37,500"
+			},
+			"offsets": {
+				"from": 95500,
+				"to": 97500
+			},
+			"text": " This is your bare-boned native workflow."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:37,500",
+				"to": "00:01:42,500"
+			},
+			"offsets": {
+				"from": 97500,
+				"to": 102500
+			},
+			"text": " Here, you're pretty much left to your own devices to configure the raw native layers of your application."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:42,500",
+				"to": "00:01:47,500"
+			},
+			"offsets": {
+				"from": 102500,
+				"to": 107500
+			},
+			"text": " Let's look at the first option in Part 2, the fast track, Expo."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:47,500",
+				"to": "00:01:50,500"
+			},
+			"offsets": {
+				"from": 107500,
+				"to": 110500
+			},
+			"text": " This is all about frictionless mobile development."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:50,500",
+				"to": "00:01:53,500"
+			},
+			"offsets": {
+				"from": 110500,
+				"to": 113500
+			},
+			"text": " Now, if you go with Expo, it is such a breath of fresh air."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:53,500",
+				"to": "00:01:56,500"
+			},
+			"offsets": {
+				"from": 113500,
+				"to": 116500
+			},
+			"text": " I mean, you can literally run a single command on your computer,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:56,500",
+				"to": "00:02:01,500"
+			},
+			"offsets": {
+				"from": 116500,
+				"to": 121500
+			},
+			"text": " open up the Expo Go app on your physical phone, scan a QR code, and you are in."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:01,500",
+				"to": "00:02:06,500"
+			},
+			"offsets": {
+				"from": 121500,
+				"to": 126500
+			},
+			"text": " No massive, heavy tools like Android Studio or Xcode bogging down your machine."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:06,500",
+				"to": "00:02:10,500"
+			},
+			"offsets": {
+				"from": 126500,
+				"to": 130500
+			},
+			"text": " You're previewing your live app directly on your device in minutes."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:10,500",
+				"to": "00:02:13,500"
+			},
+			"offsets": {
+				"from": 130500,
+				"to": 133500
+			},
+			"text": " It completely skips those hours of complex installation headaches."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:13,500",
+				"to": "00:02:17,500"
+			},
+			"offsets": {
+				"from": 133500,
+				"to": 137500
+			},
+			"text": " It's honestly kind of amazing how fast you can get up and running."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:17,500",
+				"to": "00:02:21,500"
+			},
+			"offsets": {
+				"from": 137500,
+				"to": 141500
+			},
+			"text": " Now, you might be thinking, well, if it's that easy, it's probably just for beginners, right?"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:21,500",
+				"to": "00:02:24,500"
+			},
+			"offsets": {
+				"from": 141500,
+				"to": 144500
+			},
+			"text": " No way. That is a huge misconception."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:24,500",
+				"to": "00:02:26,500"
+			},
+			"offsets": {
+				"from": 144500,
+				"to": 146500
+			},
+			"text": " Just take a look at this roster."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:26,500",
+				"to": "00:02:29,500"
+			},
+			"offsets": {
+				"from": 146500,
+				"to": 149500
+			},
+			"text": " Discord, Burger King, Coinbase, Xbox."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:29,500",
+				"to": "00:02:32,500"
+			},
+			"offsets": {
+				"from": 149500,
+				"to": 152500
+			},
+			"text": " Over 2,000 companies use Expo."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:32,500",
+				"to": "00:02:34,500"
+			},
+			"offsets": {
+				"from": 152500,
+				"to": 154500
+			},
+			"text": " These are massive tech giants."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:34,500",
+				"to": "00:02:37,500"
+			},
+			"offsets": {
+				"from": 154500,
+				"to": 157500
+			},
+			"text": " They rely on this exact managed workflow to streamline their pipelines"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:37,500",
+				"to": "00:02:40,500"
+			},
+			"offsets": {
+				"from": 157500,
+				"to": 160500
+			},
+			"text": " and push features to market way faster."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:40,500",
+				"to": "00:02:43,500"
+			},
+			"offsets": {
+				"from": 160500,
+				"to": 163500
+			},
+			"text": " So, yeah, it is absolutely industry-grade."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:43,500",
+				"to": "00:02:46,500"
+			},
+			"offsets": {
+				"from": 163500,
+				"to": 166500
+			},
+			"text": " And you know one of the biggest reasons those huge companies love it?"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:46,500",
+				"to": "00:02:49,500"
+			},
+			"offsets": {
+				"from": 166500,
+				"to": 169500
+			},
+			"text": " Over the Air or OTA updates."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:49,500",
+				"to": "00:02:52,500"
+			},
+			"offsets": {
+				"from": 169500,
+				"to": 172500
+			},
+			"text": " This feature is a total lifesaver."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:52,500",
+				"to": "00:02:56,500"
+			},
+			"offsets": {
+				"from": 172500,
+				"to": 176500
+			},
+			"text": " Imagine you just launched and you find a critical bug in your JavaScript."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:56,500",
+				"to": "00:03:01,500"
+			},
+			"offsets": {
+				"from": 176500,
+				"to": 181500
+			},
+			"text": " Normally, you'd have to compile a whole new build and wait days for Apple or Google to approve it."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:01,500",
+				"to": "00:03:06,500"
+			},
+			"offsets": {
+				"from": 181500,
+				"to": 186500
+			},
+			"text": " But with OTA updates, you just push the fix directly to your users' devices, instantly."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:06,500",
+				"to": "00:03:09,500"
+			},
+			"offsets": {
+				"from": 186500,
+				"to": 189500
+			},
+			"text": " By passing the app stores entirely for those quick JS fixes."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:09,500",
+				"to": "00:03:14,500"
+			},
+			"offsets": {
+				"from": 189500,
+				"to": 194500
+			},
+			"text": " It is an absolute game-changer for maintaining your app and deploying new features in mere minutes."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:14,500",
+				"to": "00:03:16,500"
+			},
+			"offsets": {
+				"from": 194500,
+				"to": 196500
+			},
+			"text": " So, what's the catch?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:16,500",
+				"to": "00:03:18,500"
+			},
+			"offsets": {
+				"from": 196500,
+				"to": 198500
+			},
+			"text": " Let's look at part 3."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:18,500",
+				"to": "00:03:23,500"
+			},
+			"offsets": {
+				"from": 198500,
+				"to": 203500
+			},
+			"text": " Full control, the CLI, the bare-bone native workflow."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:23,500",
+				"to": "00:03:27,500"
+			},
+			"offsets": {
+				"from": 203500,
+				"to": 207500
+			},
+			"text": " Because what if your app needs a super-specific custom piece of hardware integration"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:27,500",
+				"to": "00:03:30,500"
+			},
+			"offsets": {
+				"from": 207500,
+				"to": 210500
+			},
+			"text": " that Expo just doesn't support right out of the box?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:30,500",
+				"to": "00:03:32,500"
+			},
+			"offsets": {
+				"from": 210500,
+				"to": 212500
+			},
+			"text": " Well, that's where the CLI comes in."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:32,500",
+				"to": "00:03:35,500"
+			},
+			"offsets": {
+				"from": 212500,
+				"to": 215500
+			},
+			"text": " And, man, the setup here is noticeably heavier."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:35,500",
+				"to": "00:03:38,500"
+			},
+			"offsets": {
+				"from": 215500,
+				"to": 218500
+			},
+			"text": " We're talking a pretty grueling, multi-step configuration process."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:38,500",
+				"to": "00:03:40,500"
+			},
+			"offsets": {
+				"from": 218500,
+				"to": 220500
+			},
+			"text": " No simple QR codes here."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:40,500",
+				"to": "00:03:42,500"
+			},
+			"offsets": {
+				"from": 220500,
+				"to": 222500
+			},
+			"text": " You've got to install Node.js, the Java Development Kit,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:42,500",
+				"to": "00:03:45,500"
+			},
+			"offsets": {
+				"from": 222500,
+				"to": 225500
+			},
+			"text": " download massive programs like Android Studio and Xcode,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:45,500",
+				"to": "00:03:50,500"
+			},
+			"offsets": {
+				"from": 225500,
+				"to": 230500
+			},
+			"text": " then you're carefully configuring SDK paths, meticulously setting environment variables,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:50,500",
+				"to": "00:03:53,500"
+			},
+			"offsets": {
+				"from": 230500,
+				"to": 233500
+			},
+			"text": " and manually building everything on local emulators."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:53,500",
+				"to": "00:03:58,500"
+			},
+			"offsets": {
+				"from": 233500,
+				"to": 238500
+			},
+			"text": " Honestly, just getting a simple Hello World screen to show up can literally eat up an entire afternoon of troubleshooting."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:58,500",
+				"to": "00:04:01,500"
+			},
+			"offsets": {
+				"from": 238500,
+				"to": 241500
+			},
+			"text": " So why on earth would anyone choose that?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:01,500",
+				"to": "00:04:04,500"
+			},
+			"offsets": {
+				"from": 241500,
+				"to": 244500
+			},
+			"text": " Well, because this complex local setup unlocks the ultimate reward."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:04,500",
+				"to": "00:04:06,500"
+			},
+			"offsets": {
+				"from": 244500,
+				"to": 246500
+			},
+			"text": " Total, absolute control."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:06,500",
+				"to": "00:04:12,500"
+			},
+			"offsets": {
+				"from": 246500,
+				"to": 252500
+			},
+			"text": " With the CLI, you have the unfettered ability to bridge literally any custom native module right into your app."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:12,500",
+				"to": "00:04:15,500"
+			},
+			"offsets": {
+				"from": 252500,
+				"to": 255500
+			},
+			"text": " Need to dip down into the native layer and write custom logic in Java,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:15,500",
+				"to": "00:04:18,500"
+			},
+			"offsets": {
+				"from": 255500,
+				"to": 258500
+			},
+			"text": " Kotlin, Swift, or Objective-C? You can do it."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:18,500",
+				"to": "00:04:21,500"
+			},
+			"offsets": {
+				"from": 258500,
+				"to": 261500
+			},
+			"text": " If a third-party SDK doesn't have an Expo wrapper, doesn't matter."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:21,500",
+				"to": "00:04:26,500"
+			},
+			"offsets": {
+				"from": 261500,
+				"to": 266500
+			},
+			"text": " You hold the keys to the build configuration so you can make absolutely anything work."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:26,500",
+				"to": "00:04:30,500"
+			},
+			"offsets": {
+				"from": 266500,
+				"to": 270500
+			},
+			"text": " Which brings us to part 4, the escape hatch, ejecting."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:30,500",
+				"to": "00:04:32,500"
+			},
+			"offsets": {
+				"from": 270500,
+				"to": 272500
+			},
+			"text": " This is where we connect the two paths."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:32,500",
+				"to": "00:04:37,500"
+			},
+			"offsets": {
+				"from": 272500,
+				"to": 277500
+			},
+			"text": " Now, if you're sitting there feeling a little anxious about making the wrong choice on day 1,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:37,500",
+				"to": "00:04:38,500"
+			},
+			"offsets": {
+				"from": 277500,
+				"to": 278500
+			},
+			"text": " don't worry."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:38,500",
+				"to": "00:04:41,500"
+			},
+			"offsets": {
+				"from": 278500,
+				"to": 281500
+			},
+			"text": " There's actually a massive plot twist in this ecosystem."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:41,500",
+				"to": "00:04:43,500"
+			},
+			"offsets": {
+				"from": 281500,
+				"to": 283500
+			},
+			"text": " It's called ejecting."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:43,500",
+				"to": "00:04:45,500"
+			},
+			"offsets": {
+				"from": 283500,
+				"to": 285500
+			},
+			"text": " Ejecting acts as an escape hatch."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:45,500",
+				"to": "00:04:49,500"
+			},
+			"offsets": {
+				"from": 285500,
+				"to": 289500
+			},
+			"text": " It lets you seamlessly transition your codebase from that comfy,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:49,500",
+				"to": "00:04:53,500"
+			},
+			"offsets": {
+				"from": 289500,
+				"to": 293500
+			},
+			"text": " managed Expo workflow right into the bare CLI workflow."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:53,500",
+				"to": "00:04:56,500"
+			},
+			"offsets": {
+				"from": 293500,
+				"to": 296500
+			},
+			"text": " You literally just run npm run eject in your terminal,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:56,500",
+				"to": "00:05:01,500"
+			},
+			"offsets": {
+				"from": 296500,
+				"to": 301500
+			},
+			"text": " and Expo basically unpacks all those hidden iOS and Android configuration folders"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:01,500",
+				"to": "00:05:05,500"
+			},
+			"offsets": {
+				"from": 301500,
+				"to": 305500
+			},
+			"text": " it was managing for you, and hands you the keys to the entire native kingdom."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:05,500",
+				"to": "00:05:09,500"
+			},
+			"offsets": {
+				"from": 305500,
+				"to": 309500
+			},
+			"text": " What this means in practice is that you really do get the best of both worlds."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:09,500",
+				"to": "00:05:12,500"
+			},
+			"offsets": {
+				"from": 309500,
+				"to": 312500
+			},
+			"text": " You can start fast, like incredibly fast with Expo,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:12,500",
+				"to": "00:05:16,500"
+			},
+			"offsets": {
+				"from": 312500,
+				"to": 316500
+			},
+			"text": " and get 95% of your app built without any headaches."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:16,500",
+				"to": "00:05:19,500"
+			},
+			"offsets": {
+				"from": 316500,
+				"to": 319500
+			},
+			"text": " You only ever need to pull that eject cord if a highly specific,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:19,500",
+				"to": "00:05:22,500"
+			},
+			"offsets": {
+				"from": 319500,
+				"to": 322500
+			},
+			"text": " unsupported native module becomes strictly necessary right before launch."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:22,500",
+				"to": "00:05:27,500"
+			},
+			"offsets": {
+				"from": 322500,
+				"to": 327500
+			},
+			"text": " It completely removes the fear of being permanently locked out of native capabilities later on."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:27,500",
+				"to": "00:05:32,500"
+			},
+			"offsets": {
+				"from": 327500,
+				"to": 332500
+			},
+			"text": " Finally, part 5, choosing your workflow, which path is actually right for you."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:32,500",
+				"to": "00:05:34,500"
+			},
+			"offsets": {
+				"from": 332500,
+				"to": 334500
+			},
+			"text": " Let's put them side by side."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:34,500",
+				"to": "00:05:37,500"
+			},
+			"offsets": {
+				"from": 334500,
+				"to": 337500
+			},
+			"text": " This directly contrasts the incredible speed of the fast track"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:37,500",
+				"to": "00:05:39,500"
+			},
+			"offsets": {
+				"from": 337500,
+				"to": 339500
+			},
+			"text": " against a heavy lifting of full control."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:39,500",
+				"to": "00:05:44,500"
+			},
+			"offsets": {
+				"from": 339500,
+				"to": 344500
+			},
+			"text": " On the left, Expo gets you running instantly and gives you those magical over-the-air updates,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:44,500",
+				"to": "00:05:48,500"
+			},
+			"offsets": {
+				"from": 344500,
+				"to": 348500
+			},
+			"text": " but it does limit you from writing deep, custom native code right out of the gate."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:48,500",
+				"to": "00:05:54,500"
+			},
+			"offsets": {
+				"from": 348500,
+				"to": 354500
+			},
+			"text": " While over on the right, the React Native CLI demands a rigorous, sometimes painful local setup,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:54,500",
+				"to": "00:05:59,500"
+			},
+			"offsets": {
+				"from": 354500,
+				"to": 359500
+			},
+			"text": " but it rewards you with total control and support for absolutely any native monitor you could ever dream up."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:59,500",
+				"to": "00:06:01,500"
+			},
+			"offsets": {
+				"from": 359500,
+				"to": 361500
+			},
+			"text": " So what's the takeaway here?"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:01,500",
+				"to": "00:06:06,500"
+			},
+			"offsets": {
+				"from": 361500,
+				"to": 366500
+			},
+			"text": " You really need to ask yourself, do you absolutely need custom, proprietary native code right this second,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:06,500",
+				"to": "00:06:11,500"
+			},
+			"offsets": {
+				"from": 366500,
+				"to": 371500
+			},
+			"text": " or is getting your app built and into users' hands as fast as possible your ultimate priority?"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:11,500",
+				"to": "00:06:13,500"
+			},
+			"offsets": {
+				"from": 371500,
+				"to": 373500
+			},
+			"text": " Let that guide your initial setup."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:13,500",
+				"to": "00:06:16,500"
+			},
+			"offsets": {
+				"from": 373500,
+				"to": 376500
+			},
+			"text": " With the escape hatch, you're never truly trapped."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:16,500",
+				"to": "00:06:19,500"
+			},
+			"offsets": {
+				"from": 376500,
+				"to": 379500
+			},
+			"text": " But here's a bigger, more provocative question to leave you with,"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:19,500",
+				"to": "00:06:25,500"
+			},
+			"offsets": {
+				"from": 379500,
+				"to": 385500
+			},
+			"text": " the managed workflows like Expo get more powerful every single year is that grueling bare metal CLI setup"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:25,500",
+				"to": "00:06:27,500"
+			},
+			"offsets": {
+				"from": 385500,
+				"to": 387500
+			},
+			"text": " eventually going to become completely obsolete."
+		},
+		{
+			"timestamps": {
+				"from": "00:06:27,500",
+				"to": "00:06:31,500"
+			},
+			"offsets": {
+				"from": 387500,
+				"to": 391500
+			},
+			"text": " Or will developers always demand the ability to touch the raw native layer?"
+		},
+		{
+			"timestamps": {
+				"from": "00:06:31,500",
+				"to": "00:06:34,500"
+			},
+			"offsets": {
+				"from": 391500,
+				"to": 394500
+			},
+			"text": " It's definitely something to think about. Thanks for joining me for this explainer."
+		}
+	]
+}

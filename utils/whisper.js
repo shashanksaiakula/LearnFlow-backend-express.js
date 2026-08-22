@@ -12,6 +12,22 @@ async function generateTranscript(audioPath, outputJsonPath) {
             return reject(new Error("Audio path is required"));
         }
 
+        if (!WHISPER_PATH) {
+            return reject(
+                new Error(
+                    "Whisper executable not found. Set WHISPER_PATH or install the whisper CLI on the server."
+                )
+            );
+        }
+
+        if (!MODEL_PATH) {
+            return reject(
+                new Error(
+                    "Whisper model not found. Set MODEL_PATH or place ggml-base.en.bin in a models folder."
+                )
+            );
+        }
+
         // Start Whisper
         const process = spawn(WHISPER_PATH, [
             "-m",
