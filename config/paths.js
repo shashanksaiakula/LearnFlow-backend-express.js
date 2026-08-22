@@ -12,22 +12,27 @@ function resolveFirstExisting(candidates) {
         }
     }
 
-    return candidates[candidates.length - 1] || null;
+    return null;
 }
 
-const WHISPER_PATH = resolveFirstExisting([
-    process.env.WHISPER_PATH,
-    path.join(ROOT, "whisper", "Release", "whisper-cli.exe"),
-    path.join(ROOT, "whisper", "Release", "whisper-cli"),
-    "whisper",
-    "whisper.exe"
-]);
+const WHISPER_PATH =
+    process.env.WHISPER_PATH ||
+    resolveFirstExisting([
+        path.join(ROOT, "whisper", "Release", "whisper-cli.exe"),
+        path.join(ROOT, "whisper", "Release", "whisper-cli"),
+        process.platform === "win32" ? "whisper.exe" : null,
+        process.platform === "win32" ? "whisper" : null,
+        "/usr/local/bin/whisper",
+        "/usr/bin/whisper"
+    ]);
 
-const MODEL_PATH = resolveFirstExisting([
-    process.env.MODEL_PATH,
-    path.join(ROOT, "models", "ggml-base.en.bin"),
-    path.join(process.cwd(), "models", "ggml-base.en.bin")
-]);
+const MODEL_PATH =
+    process.env.MODEL_PATH ||
+    resolveFirstExisting([
+        path.join(ROOT, "models", "ggml-base.en.bin"),
+        path.join(process.cwd(), "models", "ggml-base.en.bin"),
+        "/app/models/ggml-base.en.bin"
+    ]);
 
 module.exports = {
     WHISPER_PATH,
