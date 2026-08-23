@@ -1,5 +1,7 @@
 const nodemailer = require("nodemailer");
 
+const dns = require('dns');
+
 // Create transporter with explicit SMTP configuration (more reliable than service: "Gmail")
 const createTransporter = () => {
     const emailUser = process.env.EMAIL_USER;
@@ -10,10 +12,17 @@ const createTransporter = () => {
         return null;
     }
 
+    // Allow overriding port/secure via env for testing (Railway may block 465)
+    const port = process.env.EMAIL_SMTP_PORT ? Number(process.env.EMAIL_SMTP_PORT) : 465;
+    const secure = typeof process.env.EMAIL_SMTP_SECURE !== 'undefined' ? (process.env.EMAIL_SMTP_SECURE === 'true') : true;
+
+    // Force IPv4 DNS lookup to avoid ENETUNREACH IPv6 errors on some hosts (Railway) by using lookup
+    const lookup = (hostname, options, callback) => dns.lookup(hostname, { family: 4 }, callback);
+
     return nodemailer.createTransport({
         host: "smtp.gmail.com",
-        port: 465,
-        secure: true, // true for 465, false for other ports
+        port,
+        secure, // true for 465, false for other ports
         auth: {
             user: emailUser,
             pass: emailPassword,
@@ -22,6 +31,8 @@ const createTransporter = () => {
         connectionTimeout: 10000,
         greetingTimeout: 5000,
         socketTimeout: 10000,
+        // Force IPv4 to avoid ENETUNREACH on IPv6-only attempts
+        lookup,
     });
 };
 
