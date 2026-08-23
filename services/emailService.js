@@ -5,8 +5,14 @@ const dns = require('dns');
 // Create transporter with explicit SMTP configuration (more reliable than service: "Gmail")
 // Accept an optional host override (IPv4 address) so we can connect directly to an IPv4
 const createTransporter = (overrideHost) => {
-    const emailUser = process.env.EMAIL_USER;
-    const emailPassword = process.env.EMAIL_PASSWORD;
+    // Trim env vars to avoid accidental leading/trailing whitespace from the PaaS UI
+    const rawEmailUser = process.env.EMAIL_USER;
+    const rawEmailPassword = process.env.EMAIL_PASSWORD;
+    const emailUser = typeof rawEmailUser === 'string' ? rawEmailUser.trim() : rawEmailUser;
+    const emailPassword = typeof rawEmailPassword === 'string' ? rawEmailPassword.trim() : rawEmailPassword;
+
+    // Log presence (do NOT log values or secrets)
+    console.log('🔐 EMAIL_USER present:', !!emailUser, 'EMAIL_PASSWORD present:', !!emailPassword);
 
     if (!emailUser || !emailPassword) {
         console.error("❌ EMAIL_USER or EMAIL_PASSWORD not configured in environment variables");
