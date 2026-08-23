@@ -35,4 +35,29 @@ router.get('/__email-test', async (req, res) => {
     }
 });
 
+// Protected debug endpoint that returns safe diagnostics about environment variables (does NOT expose values)
+router.get('/__email-debug', (req, res) => {
+    const secret = req.query.secret || req.headers['x-email-test-secret'];
+    const expected = process.env.EMAIL_TEST_SECRET;
+    if (!expected || secret !== expected) {
+        return res.status(403).json({ ok: false, message: 'forbidden' });
+    }
+
+    const rawUser = process.env.EMAIL_USER;
+    const rawPass = process.env.EMAIL_PASSWORD;
+    const user = typeof rawUser === 'string' ? rawUser.trim() : rawUser;
+    const pass = typeof rawPass === 'string' ? rawPass.trim() : rawPass;
+
+    const info = {
+        EMAIL_USER_present: !!user,
+        EMAIL_USER_length: user ? user.length : 0,
+        EMAIL_PASSWORD_present: !!pass,
+        EMAIL_PASSWORD_length: pass ? pass.length : 0,
+        EMAIL_SMTP_PORT: process.env.EMAIL_SMTP_PORT || null,
+        EMAIL_SMTP_SECURE: typeof process.env.EMAIL_SMTP_SECURE !== 'undefined' ? process.env.EMAIL_SMTP_SECURE : null
+    };
+
+    return res.json({ ok: true, info });
+});
+
 module.exports = router
