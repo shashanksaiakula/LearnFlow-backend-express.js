@@ -3,7 +3,8 @@ const nodemailer = require("nodemailer");
 const dns = require('dns');
 
 // Create transporter with explicit SMTP configuration (more reliable than service: "Gmail")
-const createTransporter = () => {
+// Accept an optional host override (IPv4 address) so we can connect directly to an IPv4
+const createTransporter = (overrideHost) => {
     const emailUser = process.env.EMAIL_USER;
     const emailPassword = process.env.EMAIL_PASSWORD;
 
@@ -19,8 +20,10 @@ const createTransporter = () => {
     // Force IPv4 DNS lookup to avoid ENETUNREACH IPv6 errors on some hosts (Railway) by using lookup
     const lookup = (hostname, options, callback) => dns.lookup(hostname, { family: 4 }, callback);
 
-    return nodemailer.createTransport({
-        host: "smtp.gmail.com",
+    const host = overrideHost || "smtp.gmail.com";
+
+    const transportOptions = {
+        host,
         port,
         secure, // true for 465, false for other ports
         auth: {
@@ -33,15 +36,34 @@ const createTransporter = () => {
         socketTimeout: 10000,
         // Force IPv4 to avoid ENETUNREACH on IPv6-only attempts
         lookup,
-    });
+    };
+
+    // If connecting to an IPv4 literal, set TLS servername so SNI and cert checks still use smtp.gmail.com
+    if (overrideHost) {
+        transportOptions.tls = Object.assign({}, transportOptions.tls, { servername: 'smtp.gmail.com' });
+    }
+
+    return nodemailer.createTransport(transportOptions);
 };
 
-let transporter = createTransporter();
+let transporter = null;
 
 const initializeTransporter = async () => {
-    if (!transporter) {
-        transporter = createTransporter();
+    // Try to resolve an IPv4 address for smtp.gmail.com and prefer that to avoid IPv6 reachability issues
+    let overrideHost = null;
+    try {
+        const addrs = await dns.promises.resolve4('smtp.gmail.com');
+        if (Array.isArray(addrs) && addrs.length > 0) {
+            overrideHost = addrs[0];
+            console.log('🔎 Resolved smtp.gmail.com IPv4 to', overrideHost);
+        }
+    } catch (err) {
+        // ignore resolve4 errors and fall back to hostname - we'll log below
+        console.warn('⚠️ dns.resolve4 failed, falling back to smtp.gmail.com', err && err.message ? err.message : err);
     }
+
+    transporter = createTransporter(overrideHost);
+
     if (transporter) {
         try {
             await transporter.verify();
@@ -59,9 +81,12 @@ initializeTransporter();
 
 // Exposed helper to explicitly verify transporter (useful for remote diagnostics)
 const verifyTransporter = async () => {
-    transporter = transporter || createTransporter();
     if (!transporter) {
-        throw new Error("Email transporter not configured (missing EMAIL_USER or EMAIL_PASSWORD)");
+        // attempt to initialize again (with IPv4 resolve)
+        await initializeTransporter();
+    }
+    if (!transporter) {
+        throw new Error("Email transporter not configured (missing EMAIL_USER or EMAIL_PASSWORD) or verification failed");
     }
     await transporter.verify();
     return true;
