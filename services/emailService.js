@@ -5,19 +5,35 @@ const dns = require('dns');
 // Create transporter with explicit SMTP configuration (more reliable than service: "Gmail")
 // Accept an optional host override (IPv4 address) so we can connect directly to an IPv4
 const createTransporter = (overrideHost) => {
-    // Trim env vars to avoid accidental leading/trailing whitespace from the PaaS UI
-    const rawEmailUser = process.env.EMAIL_USER;
-    const rawEmailPassword = process.env.EMAIL_PASSWORD;
-    const emailUser = typeof rawEmailUser === 'string' ? rawEmailUser.trim() : rawEmailUser;
-    const emailPassword = typeof rawEmailPassword === 'string' ? rawEmailPassword.trim() : rawEmailPassword;
+    // Helper: try multiple env names for email user/password (handles PaaS naming differences)
+    const findEnv = (candidates) => {
+        for (const k of candidates) {
+            const v = process.env[k];
+            if (typeof v === 'string' && v.trim().length > 0) return { key: k, value: v.trim() };
+        }
+        return null;
+    };
 
-    // Log presence (do NOT log values or secrets)
-    console.log('🔐 EMAIL_USER present:', !!emailUser, 'EMAIL_PASSWORD present:', !!emailPassword);
+    // Common env name candidates
+    const userCandidates = ['EMAIL_USER', 'EMAIL_USERNAME', 'SMTP_USER', 'MAIL_USER', 'EMAIL_ADDRESS', 'MAILER_USER'];
+    const passCandidates = ['EMAIL_PASSWORD', 'SMTP_PASSWORD', 'MAIL_PASSWORD', 'EMAIL_PASS', 'APP_EMAIL_PASSWORD'];
 
-    if (!emailUser || !emailPassword) {
-        console.error("❌ EMAIL_USER or EMAIL_PASSWORD not configured in environment variables");
+    const userEntry = findEnv(userCandidates);
+    const passEntry = findEnv(passCandidates);
+
+    // Log which keys are present (do NOT log values)
+    console.log('🔐 Email env presence:', {
+        userKeyFound: userEntry ? userEntry.key : null,
+        passKeyFound: passEntry ? passEntry.key : null,
+    });
+
+    if (!userEntry || !passEntry) {
+        console.error("❌ EMAIL user/password not configured under known variable names. Checked:", userCandidates, passCandidates);
         return null;
     }
+
+    const emailUser = userEntry.value;
+    const emailPassword = passEntry.value;
 
     // Allow overriding port/secure via env for testing (Railway may block 465)
     const port = process.env.EMAIL_SMTP_PORT ? Number(process.env.EMAIL_SMTP_PORT) : 465;
