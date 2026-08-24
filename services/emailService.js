@@ -4,8 +4,7 @@ const dns = require('dns');
 
 // Create transporter with explicit SMTP configuration (more reliable than service: "Gmail")
 // Accept an optional host override (IPv4 address) so we can connect directly to an IPv4
-const createTransporter = (overrideHost) => {
-    // Helper: try multiple env names for email user/password (handles PaaS naming differences)
+const createTransporter = () => {
     const findEnv = (candidates) => {
         for (const k of candidates) {
             const v = process.env[k];
@@ -14,86 +13,51 @@ const createTransporter = (overrideHost) => {
         return null;
     };
 
-    // Common env name candidates
-    const userCandidates = ['EMAIL_USER', 'EMAIL_USERNAME', 'SMTP_USER', 'MAIL_USER', 'EMAIL_ADDRESS', 'MAILER_USER'];
-    const passCandidates = ['EMAIL_PASSWORD', 'SMTP_PASSWORD', 'MAIL_PASSWORD', 'EMAIL_PASS', 'APP_EMAIL_PASSWORD'];
+    const userCandidates = ['EMAIL_USER', 'EMAIL_USERNAME', 'SMTP_USER', 'MAIL_USER', 'EMAIL_ADDRESS'];
+    const passCandidates = ['EMAIL_PASSWORD', 'SMTP_PASSWORD', 'MAIL_PASSWORD', 'EMAIL_PASS'];
 
     const userEntry = findEnv(userCandidates);
     const passEntry = findEnv(passCandidates);
 
-    // Log which keys are present (do NOT log values)
-    console.log('🔐 Email env presence:', {
-        userKeyFound: userEntry ? userEntry.key : null,
-        passKeyFound: passEntry ? passEntry.key : null,
-    });
-
     if (!userEntry || !passEntry) {
-        console.error("❌ EMAIL user/password not configured under known variable names. Checked:", userCandidates, passCandidates);
+        console.error("❌ EMAIL user/password not configured.");
         return null;
     }
 
-    const emailUser = userEntry.value;
-    const emailPassword = passEntry.value;
+    // Dynamic configuration directly from Railway dashboard
+    const host = process.env.SMTP_HOST || "mail.gov.in";
+    const port = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 465;
+    const secure = process.env.SMTP_SECURE !== 'undefined' ? (process.env.SMTP_SECURE === 'true') : true;
 
-    // Allow overriding port/secure via env for testing (Railway may block 465)
-    const port = process.env.EMAIL_SMTP_PORT ? Number(process.env.EMAIL_SMTP_PORT) : 465;
-    const secure = typeof process.env.EMAIL_SMTP_SECURE !== 'undefined' ? (process.env.EMAIL_SMTP_SECURE === 'true') : true;
+    console.log(`🔌 Connecting to SMTP Host: ${host} on Port: ${port} (Secure: ${secure})`);
 
-    // Force IPv4 DNS lookup to avoid ENETUNREACH IPv6 errors on some hosts (Railway) by using lookup
-    const lookup = (hostname, options, callback) => dns.lookup(hostname, { family: 4 }, callback);
-
-    const host = overrideHost || "smtp.gmail.com";
-
-    const transportOptions = {
+    return nodemailer.createTransport({
         host,
         port,
-        secure, // true for 465, false for other ports
+        secure, 
         auth: {
-            user: emailUser,
-            pass: emailPassword,
+            user: userEntry.value,
+            pass: passEntry.value,
         },
-        // Add connection timeout and debug options for production
         connectionTimeout: 10000,
         greetingTimeout: 5000,
         socketTimeout: 10000,
-        // Force IPv4 to avoid ENETUNREACH on IPv6-only attempts
-        lookup,
-    };
-
-    // If connecting to an IPv4 literal, set TLS servername so SNI and cert checks still use smtp.gmail.com
-    if (overrideHost) {
-        transportOptions.tls = Object.assign({}, transportOptions.tls, { servername: 'smtp.gmail.com' });
-    }
-
-    return nodemailer.createTransport(transportOptions);
+    });
 };
 
 let transporter = null;
 
 const initializeTransporter = async () => {
-    // Try to resolve an IPv4 address for smtp.gmail.com and prefer that to avoid IPv6 reachability issues
-    let overrideHost = null;
-    try {
-        const addrs = await dns.promises.resolve4('smtp.gmail.com');
-        if (Array.isArray(addrs) && addrs.length > 0) {
-            overrideHost = addrs[0];
-            console.log('🔎 Resolved smtp.gmail.com IPv4 to', overrideHost);
-        }
-    } catch (err) {
-        // ignore resolve4 errors and fall back to hostname - we'll log below
-        console.warn('⚠️ dns.resolve4 failed, falling back to smtp.gmail.com', err && err.message ? err.message : err);
-    }
-
-    transporter = createTransporter(overrideHost);
+    transporter = createTransporter();
 
     if (transporter) {
         try {
             await transporter.verify();
             console.log("✅ Email transporter verified and ready");
         } catch (error) {
-            console.error("❌ Email transporter verification failed:");
-            console.error(error && error.stack ? error.stack : error);
-            transporter = null;
+            console.error("❌ Email transporter verification failed. Check your credentials or network rules:");
+            console.error(error.message);
+            // We keep the transporter instance so the error doesn't default to "not initialized"
         }
     }
 };
