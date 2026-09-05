@@ -104,7 +104,7 @@ const changePassword = async (oldPassword, newPassword, userId) => {
 async function updateProfile(userId, body) {
 
     console.log(body)
-    const { name, profileImage, dateOfBirth } = body;
+    const { name, profileImage, dateOfBirth ,phoneNumber } = body;
 
     const user = await User.findById(userId);
 
@@ -124,6 +124,10 @@ async function updateProfile(userId, body) {
         user.dateOfBirth = dateOfBirth;
     }
 
+    if(phoneNumber){
+        user.phoneNumber = phoneNumber;
+    }
+
     await user.save();
 
     return {
@@ -131,7 +135,8 @@ async function updateProfile(userId, body) {
         name: user.name,
         email: user.email,
         profileImage: user.profileImage,
-        dateOfBirth: user.dateOfBirth
+        dateOfBirth: user.dateOfBirth,
+        phoneNumber : user.phoneNumber
     };
 }
 async function forgotPassword(email) {

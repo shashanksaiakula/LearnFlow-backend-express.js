@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema(
     },
 
     dateOfBirth: {
-      type: Date,
+      type: String,
       default: null,
     },
 
